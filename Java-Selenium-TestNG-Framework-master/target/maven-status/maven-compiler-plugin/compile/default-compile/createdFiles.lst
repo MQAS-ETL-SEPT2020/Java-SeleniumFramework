@@ -1,0 +1,7 @@
+pages\BasePage.class
+pages\ForumsPage.class
+pages\LoginPage.class
+pages\CartPage.class
+pages\HomePage.class
+pages\CheckoutPage.class
+util\ExtentReportListener.class
