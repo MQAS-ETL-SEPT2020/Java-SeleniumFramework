@@ -14,9 +14,10 @@ import com.relevantcodes.extentreports.ExtentTest;
 public class BasePage {
 
 	public static WebDriver driver;
-	String url = "https://www.oculus.com/";
+	//String url = "https://www.oculus.com/";
+	String url = "https://demowebshop.tricentis.com/";
 	public static ExtentTest logger;
-	public static ExtentReports report;
+	public static ExtentReports report; 
 
 	@BeforeClass(alwaysRun=true)
 	public void setup(ITestContext context) {
