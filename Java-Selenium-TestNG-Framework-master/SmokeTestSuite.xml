@@ -9,9 +9,10 @@
 <!-- 		<parameter name="username" value="ValidUsername" /> -->
 <!-- 		<parameter name="password" value="ValidPassword" /> -->
 		<classes>
+		   <class name="tests.CameraPageTest"></class>
 <!-- 			<class name="tests.HomePageTest" /> -->
 <!-- 			<class name="tests.LoginPageTest" /> -->
-<!-- 			<class name="tests.ForumsPageTest" /> -->
+<!-- 			<class name="tests.ForumsPageTest" /> --> 
 <!-- 			<class name="tests.CheckoutTest" /> -->
 		</classes>
 	</test>

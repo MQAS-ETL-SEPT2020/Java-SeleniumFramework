@@ -20,6 +20,8 @@ public class CameraPageTest extends BasePage {
 		electronics.clickCameraIcon();
 		//logger.log(LogStatus.INFO, "Clicking 'Camera'");
 		
+		
+		
 	}
 
 }
