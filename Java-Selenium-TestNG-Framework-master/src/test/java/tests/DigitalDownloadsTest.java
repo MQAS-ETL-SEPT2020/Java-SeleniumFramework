@@ -2,10 +2,10 @@ package tests;
 
 import org.testng.annotations.Test;
 
-import pages.AddToCartPage;
 import pages.BasePage;
-import pages.ElementsPage;
+import pages.DigitalDownloadsPage;
 import pages.HomePage;
+import pages.ImagePage;
 import pages.ShoppingCartPage;
 
 public class DigitalDownloadsTest extends BasePage {
@@ -16,11 +16,11 @@ public class DigitalDownloadsTest extends BasePage {
 		home.clickDigitalDownloads();
 		//logger.log(LogStatus.INFO, "Clicking on DIGITAL DOWNLOADS");
 
-		ElementsPage element = new  ElementsPage(driver);
-		element.album1();
+		DigitalDownloadsPage digitaldownloads=new DigitalDownloadsPage(driver);
+		digitaldownloads.album1();
 		//logger.log(LogStatus.INFO, "Clicking on 3rd Album");
 		
-		AddToCartPage cart=new AddToCartPage(driver);
+		ImagePage cart=new ImagePage(driver);
 		cart.addToCart();
 		//logger.log(LogStatus.INFO, "Clicking on Add to cart");
 		
