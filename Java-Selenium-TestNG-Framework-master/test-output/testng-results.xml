@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-30T12:48:52 IST" name="Default suite" finished-at="2022-09-30T12:49:01 IST" duration-ms="8118">
+  <suite started-at="2022-09-30T16:50:36 IST" name="Default suite" finished-at="2022-09-30T16:51:47 IST" duration-ms="70881">
     <groups>
     </groups>
-    <test started-at="2022-09-30T12:48:52 IST" name="Default test" finished-at="2022-09-30T12:49:01 IST" duration-ms="8118">
-      <class name="tests.CameraPageTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.CameraPageTest@78aab498]" started-at="2022-09-30T12:48:52 IST" name="setup" finished-at="2022-09-30T12:48:58 IST" duration-ms="6037" status="PASS">
+    <test started-at="2022-09-30T16:50:36 IST" name="Default test" finished-at="2022-09-30T16:51:47 IST" duration-ms="70881">
+      <class name="tests.JewelleryPageTest">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.JewelleryPageTest@152aa092]" started-at="2022-09-30T16:50:36 IST" name="setup" finished-at="2022-09-30T16:51:28 IST" duration-ms="52513" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3e850122]]>
+                <![CDATA[org.testng.TestRunner@7ed9499e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="navigateToCameraPage()[pri:0, instance:tests.CameraPageTest@78aab498]" started-at="2022-09-30T12:48:59 IST" name="navigateToCameraPage" finished-at="2022-09-30T12:49:00 IST" duration-ms="1826" status="PASS">
+        <test-method signature="VerifyJewelPage()[pri:0, instance:tests.JewelleryPageTest@152aa092]" started-at="2022-09-30T16:51:28 IST" name="VerifyJewelPage" finished-at="2022-09-30T16:51:43 IST" duration-ms="14946" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToCameraPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.CameraPageTest@78aab498]" started-at="2022-09-30T12:49:00 IST" name="tearDown" finished-at="2022-09-30T12:49:01 IST" duration-ms="192" status="PASS">
+        </test-method> <!-- VerifyJewelPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.JewelleryPageTest@152aa092]" started-at="2022-09-30T16:51:43 IST" name="tearDown" finished-at="2022-09-30T16:51:47 IST" duration-ms="3182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.CameraPageTest -->
+      </class> <!-- tests.JewelleryPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
