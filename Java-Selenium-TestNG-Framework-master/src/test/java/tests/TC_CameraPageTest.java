@@ -8,7 +8,7 @@ import pages.BasePage;
 import pages.ElectronicsPage;
 import pages.HomePage;
 
-public class CameraPageTest extends BasePage {
+public class TC_CameraPageTest extends BasePage {
 	
 	@Test(priority = 0)
 	public void navigateToCameraPage() {
