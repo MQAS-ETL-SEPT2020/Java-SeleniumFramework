@@ -11,20 +11,20 @@ import pages.ProductsPage;
 
 public class RemoveProductFromDemoWebShopTest extends BasePage {
 	@Test
-	public void ClickOnComputer() {
-		HomePage home = new HomePage(driver);
-		home.clickComputers();
+		public void ClickOnComputer() {
+			HomePage home = new HomePage(driver);
+			home.clickComputers();
 
-		ComputerPage computer = new ComputerPage(driver);
-		computer.ClickOnDesktop();
+			ComputerPage computer = new ComputerPage(driver);
+			computer.ClickOnDesktop();
 
-		DesktopPage desktop = new DesktopPage(driver);
-		desktop.Desktop();
+			DesktopPage desktop = new DesktopPage(driver);
+			desktop.Desktop();
 
-		CompareButtonPage comparebutton = new CompareButtonPage(driver);
-		comparebutton.click();
+			CompareButtonPage comparebutton = new CompareButtonPage(driver);
+			comparebutton.click();
 
-		ProductsPage products = new ProductsPage(driver);
-		products.remove();
+			ProductsPage products = new ProductsPage(driver);
+			products.remove();
+	}	
 	}
-}
