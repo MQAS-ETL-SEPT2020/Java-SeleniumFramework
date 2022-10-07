@@ -14,11 +14,9 @@ public class TC_CameraPageTest extends BasePage {
 	public void navigateToCameraPage() {
 		HomePage homePage=new HomePage(driver);
 		homePage.clickElectronics();
-		//logger.log(LogStatus.INFO, "Clicking 'Electronics'");
 		
 		ElectronicsPage electronics=new ElectronicsPage(driver);
 		electronics.clickCameraIcon();
-		//logger.log(LogStatus.INFO, "Clicking 'Camera'");
 		
 		
 		
