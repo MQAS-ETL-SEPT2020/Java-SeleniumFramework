@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.CameraPageTest">
+      <class name="digitalDownloads.TC_05_DigitalDownloadsTest">
         <methods>
-          <include name="navigateToCameraPage"/>
           <include name="tearDown"/>
           <include name="setup"/>
+          <include name="navigateToCheckOut"/>
         </methods>
-      </class> <!-- tests.CameraPageTest -->
+      </class> <!-- digitalDownloads.TC_05_DigitalDownloadsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
