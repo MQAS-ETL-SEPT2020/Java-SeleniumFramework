@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
@@ -52,6 +53,82 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- digitalDownloads.TC_05_DigitalDownloadsTest -->
+=======
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Clicking on Giftcards Menu]]>
+    </line>
+    <line>
+      <![CDATA[Clicking on Sort by dropdown]]>
+    </line>
+    <line>
+      <![CDATA[Clicking on Display per page dropdown]]>
+    </line>
+    <line>
+      <![CDATA[Clicking on View as dropdown]]>
+    </line>
+    <line>
+      <![CDATA[Clicking on $5 vitual Giftcard]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-10-09T00:01:53 IST" name="Default suite" finished-at="2022-10-09T00:02:02 IST" duration-ms="9048">
+    <groups>
+    </groups>
+    <test started-at="2022-10-09T00:01:53 IST" name="Default test" finished-at="2022-10-09T00:02:02 IST" duration-ms="9048">
+      <class name="tests.GiftcardPageTest">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:tests.GiftcardPageTest@7e9131d5]" started-at="2022-10-09T00:01:53 IST" name="setup" finished-at="2022-10-09T00:01:59 IST" duration-ms="5453" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@cbc8d0f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="GiftcardsMenu()[pri:0, instance:tests.GiftcardPageTest@7e9131d5]" started-at="2022-10-09T00:01:59 IST" name="GiftcardsMenu" finished-at="2022-10-09T00:02:00 IST" duration-ms="879" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Clicking on Giftcards Menu]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- GiftcardsMenu -->
+        <test-method signature="SortbyDropdown()[pri:1, instance:tests.GiftcardPageTest@7e9131d5]" started-at="2022-10-09T00:02:00 IST" name="SortbyDropdown" finished-at="2022-10-09T00:02:00 IST" duration-ms="245" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Clicking on Sort by dropdown]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- SortbyDropdown -->
+        <test-method signature="Displayperpage()[pri:2, instance:tests.GiftcardPageTest@7e9131d5]" started-at="2022-10-09T00:02:00 IST" name="Displayperpage" finished-at="2022-10-09T00:02:00 IST" duration-ms="120" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Clicking on Display per page dropdown]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Displayperpage -->
+        <test-method signature="Viewas()[pri:3, instance:tests.GiftcardPageTest@7e9131d5]" started-at="2022-10-09T00:02:00 IST" name="Viewas" finished-at="2022-10-09T00:02:00 IST" duration-ms="189" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Clicking on View as dropdown]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Viewas -->
+        <test-method signature="VitualgiftcardProduct()[pri:4, instance:tests.GiftcardPageTest@7e9131d5]" started-at="2022-10-09T00:02:00 IST" name="VitualgiftcardProduct" finished-at="2022-10-09T00:02:02 IST" duration-ms="1894" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Clicking on $5 vitual Giftcard]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- VitualgiftcardProduct -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.GiftcardPageTest@7e9131d5]" started-at="2022-10-09T00:02:02 IST" name="tearDown" finished-at="2022-10-09T00:02:02 IST" duration-ms="222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.GiftcardPageTest -->
+>>>>>>> branch 'master' of https://github.com/MQAS-ETL-SEPT2020/Java-SeleniumFramework.git
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

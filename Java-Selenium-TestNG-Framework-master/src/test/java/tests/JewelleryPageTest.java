@@ -10,7 +10,6 @@ import pages.BasePage;
 import pages.HomePage;
 import pages.JewelShoppingPage;
 import pages.NecklacePage;
-import pages.ShoppingCartPage;
 import pages.JewelleryPage;
 
 public class JewelleryPageTest extends BasePage {

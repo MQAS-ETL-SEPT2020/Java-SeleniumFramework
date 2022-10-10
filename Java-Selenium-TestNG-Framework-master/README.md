@@ -8,6 +8,7 @@ Automating functional UI and end to end tests for www.oculus.com website. This p
 - Maven
 - Extent Reports and logging
 
+
 ## Prerequisites
 - IDE (Eclipse)
 - JDK (version 7 or 8)

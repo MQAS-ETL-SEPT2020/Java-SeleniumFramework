@@ -12,7 +12,6 @@
  * By.name("lastName"); By phoneField = By.name("phoneNumber"); By addressField
  * = By.name("address1"); By cityField = By.name("city"); By
  * stateProvinceDropdown = By.cssSelector("._296s._47p_"); By zipcodeField =
- * 
  * By.name("postalCode"); By emailField = By.name("email"); By
  * emailOptInCheckbox = By.name("optInAsGuest"); By continueToPaymentButton =
  * By.name("submit"); By errorContainer = By.
