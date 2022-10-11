@@ -28,29 +28,39 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 		LoginPage1 login=new LoginPage1(driver);
 		//Step-2:GIVEN URL
 		login.clickOnLogin();
-		login.typeEmail();
-		login.typePassword();
+		Reporter.log("Clicking on Login Link", true);
+		//Assert.assertTrue(login.clickOnLogin(), "Not clicking on login link");
+
+		login.typeEmail("meghadevaraja1998@gmail.com");
+		Reporter.log("Entering valid emailId in Email textfield", true);
+		//Assert.assertTrue(login.typeEmail(String EmailId), "Not Entering valid emailId in Email textfield");
+		
+		login.typePassword("Megha@123");
+		Reporter.log("Entering valid password in password textfield", true);
+		//Assert.assertTrue(login.clickOnLogin(), "Not Entering valid password in password textfield);
+		
 		login.Loginbutton();
+		Reporter.log("Clicking on Login button", true);
+		//Assert.assertTrue(login.typePassword(String password), "Not clicking on login button");
 		
 		HomePage home=new HomePage(driver);
+		home.clickDigitalDownloads();
 		
-		
-		DigitalDownloadsPage digitaldownloads = new DigitalDownloadsPage(driver);
-		digitaldownloads.digitalDownloads();
-		Reporter.log("Clicking on DIGITAL DOWNLOADS", true);
-		Assert.assertTrue(digitaldownloads.clickdigitalDownloads(), "Not clicking on DIGITAL DOWNLOADS");
+		Reporter.log("Clicking on DIGITAL DOWNLOADS button", true);
+		Assert.assertTrue(home.clickDigitalDownloads() , "Not clicking on DIGITAL DOWNLOADS button");
 
-		//digitaldownloads.clickdigitalDownloads();
+		DigitalDownloadsPage digitaldownloads = new DigitalDownloadsPage(driver);
+		//digitaldownloads.clickingdigitalDownloads();
 		Reporter.log("DIGITAL DOWNLOADS page is  displayed", true);
-		Assert.assertTrue(digitaldownloads.clickdigitalDownloads(), "Not dispalying DIGITAL DOWNLOADS page");
+		Assert.assertTrue(digitaldownloads.clickingdigitalDownloads(), "Not dispalying DIGITAL DOWNLOADS page");
         
-		Reporter.log("By default displaying Position Option", true);
+		Reporter.log("By default  Sortby displaying Position Option", true);
 		Assert.assertTrue(digitaldownloads.defaultSortBy(), "Not displaying Position option");
 
-		Reporter.log("By default displaying Eight Option", true);
+		Reporter.log("By default Display per page displaying Eight Option", true);
 		Assert.assertTrue(digitaldownloads.defaultDisplayPerPage(), "Not displaying Eight option");
 
-		Reporter.log("By default displaying Grid Option", true);
+		Reporter.log("By default Viewas displaying Grid Option", true);
 		Assert.assertTrue(digitaldownloads.defaultViewAs(), "Not displaying Grid option");
 
 	    digitaldownloads.album1();
