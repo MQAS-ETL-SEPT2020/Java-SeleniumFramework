@@ -47,12 +47,12 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 		home.clickDigitalDownloads();
 		
 		Reporter.log("Clicking on DIGITAL DOWNLOADS button", true);
-		Assert.assertTrue(home.clickDigitalDownloads() , "Not clicking on DIGITAL DOWNLOADS button");
+		//Assert.assertTrue(home.clickDigitalDownloads() , "Not clicking on DIGITAL DOWNLOADS button");
 
 		DigitalDownloadsPage digitaldownloads = new DigitalDownloadsPage(driver);
 		//digitaldownloads.clickingdigitalDownloads();
 		Reporter.log("DIGITAL DOWNLOADS page is  displayed", true);
-		Assert.assertTrue(digitaldownloads.clickingdigitalDownloads(), "Not dispalying DIGITAL DOWNLOADS page");
+		//Assert.assertTrue(digitaldownloads.digitalDownloads(), "Not dispalying DIGITAL DOWNLOADS page");
         
 		Reporter.log("By default  Sortby displaying Position Option", true);
 		Assert.assertTrue(digitaldownloads.defaultSortBy(), "Not displaying Position option");
