@@ -55,19 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<<<<<<< HEAD
-<td>Started on:</td><td>Mon Oct 10 13:38:52 IST 2022</td>
-=======
-<td>Started on:</td><td>Sun Oct 09 00:01:53 IST 2022</td>
->>>>>>> branch 'master' of https://github.com/MQAS-ETL-SEPT2020/Java-SeleniumFramework.git
+<td>Started on:</td><td>Wed Oct 12 14:55:48 IST 2022</td>
 </tr>
-<<<<<<< HEAD
-<tr><td>Total time:</td><td>0 seconds (175 ms)</td>
-=======
-<tr><td>Total time:</td><td>9 seconds (9048 ms)</td>
->>>>>>> branch 'master' of https://github.com/MQAS-ETL-SEPT2020/Java-SeleniumFramework.git
+<tr><td>Total time:</td><td>32 seconds (32222 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,26 +68,56 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='digitalDownloads.TC_05_DigitalDownloadsTest.tearDown()'><b>tearDown</b><br>Test class: digitalDownloads.TC_05_DigitalDownloadsTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.quit()&quot; because &quot;pages.BasePage.driver&quot; is null
-	at pages.BasePage.tearDown(BasePage.java:46)
+<td title='tests.TC_05_DigitalDownloadsTest.navigateToCheckOut()'><b>navigateToCheckOut</b><br>Test class: tests.TC_05_DigitalDownloadsTest<br/>
+<a href="#Output-368727462" onClick='toggleBox("Output-368727462", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-368727462" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-368727462">
+Clicking on Login Link<br/>
+Entering valid emailId in Email textfield<br/>
+Entering valid password in password textfield<br/>
+Clicking on Login button<br/>
+Clicking on DIGITAL DOWNLOADS button<br/>
+By default Sortby displaying Position Option<br/>
+By default Display per page displaying 8 Option<br/>
+By default Viewas displaying Grid Option<br/>
+3rd image page is displayed<br/>
+Price is displayed<br/>
+Quantity is displayed<br/>
+By default Quantity is displayed as 1<br/>
+Clicking on Add to cart button<br/>
+Displaying the popup message The product has been added to your shopping cart<br/>
+Displaying Shopping cart page<br/>
+Clicking on TermsAndConditions checkbox<br/>
+Clicking on CheckOut checkbox<br/>
+Displaying Check Out page<br/>
+Selecting New Address<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: Not displaying Eight option expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at tests.TC_05_DigitalDownloadsTest.navigateToCheckOut(TC_05_DigitalDownloadsTest.java:108)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.testng.TestRunner.privateRun(TestRunner.java:794)
 	at org.testng.TestRunner.run(TestRunner.java:596)
@@ -112,19 +134,24 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1199262943", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1199262943'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.quit()&quot; because &quot;pages.BasePage.driver&quot; is null
-	at pages.BasePage.tearDown(BasePage.java:46)
+</pre></div><a href='#' onClick='toggleBox("stack-trace368727462", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace368727462'><pre>java.lang.AssertionError: Not displaying Eight option expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at tests.TC_05_DigitalDownloadsTest.navigateToCheckOut(TC_05_DigitalDownloadsTest.java:108)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.testng.TestRunner.privateRun(TestRunner.java:794)
 	at org.testng.TestRunner.run(TestRunner.java:596)
@@ -142,84 +169,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>digitalDownloads.TC_05_DigitalDownloadsTest@61230f6a</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<<<<<<< HEAD
-<td title='digitalDownloads.TC_05_DigitalDownloadsTest.navigateToCheckOut()'><b>navigateToCheckOut</b><br>Test class: digitalDownloads.TC_05_DigitalDownloadsTest</td>
-=======
-<td title='tests.GiftcardPageTest.Displayperpage()'><b>Displayperpage</b><br>Test class: tests.GiftcardPageTest<br/>
-<a href="#Output-665641137" onClick='toggleBox("Output-665641137", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-665641137" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-665641137">
-Clicking on Display per page dropdown<br/>
-</div>
-</td>
->>>>>>> branch 'master' of https://github.com/MQAS-ETL-SEPT2020/Java-SeleniumFramework.git
-<td></td>
-<td>0</td>
-<<<<<<< HEAD
-<td>digitalDownloads.TC_05_DigitalDownloadsTest@61230f6a</td></tr>
-=======
-<td>tests.GiftcardPageTest@7e9131d5</td></tr>
-<tr>
-<td title='tests.GiftcardPageTest.GiftcardsMenu()'><b>GiftcardsMenu</b><br>Test class: tests.GiftcardPageTest<br/>
-<a href="#Output-1705366777" onClick='toggleBox("Output-1705366777", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1705366777" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1705366777">
-Clicking on Giftcards Menu<br/>
-</div>
-</td>
-<td></td>
-<td>0</td>
-<td>tests.GiftcardPageTest@7e9131d5</td></tr>
-<tr>
-<td title='tests.GiftcardPageTest.SortbyDropdown()'><b>SortbyDropdown</b><br>Test class: tests.GiftcardPageTest<br/>
-<a href="#Output-1757933443" onClick='toggleBox("Output-1757933443", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1757933443" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1757933443">
-Clicking on Sort by dropdown<br/>
-</div>
-</td>
-<td></td>
-<td>0</td>
-<td>tests.GiftcardPageTest@7e9131d5</td></tr>
-<tr>
-<td title='tests.GiftcardPageTest.Viewas()'><b>Viewas</b><br>Test class: tests.GiftcardPageTest<br/>
-<a href="#Output-1880869198" onClick='toggleBox("Output-1880869198", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1880869198" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1880869198">
-Clicking on View as dropdown<br/>
-</div>
-</td>
-<td></td>
-<td>0</td>
-<td>tests.GiftcardPageTest@7e9131d5</td></tr>
-<tr>
-<td title='tests.GiftcardPageTest.VitualgiftcardProduct()'><b>VitualgiftcardProduct</b><br>Test class: tests.GiftcardPageTest<br/>
-<a href="#Output-925908754" onClick='toggleBox("Output-925908754", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-925908754" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-925908754">
-Clicking on $5 vitual Giftcard<br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>tests.GiftcardPageTest@7e9131d5</td></tr>
->>>>>>> branch 'master' of https://github.com/MQAS-ETL-SEPT2020/Java-SeleniumFramework.git
+<td>15</td>
+<td>tests.TC_05_DigitalDownloadsTest@636be97c</td></tr>
 </table><p>
 </body>
 </html>
