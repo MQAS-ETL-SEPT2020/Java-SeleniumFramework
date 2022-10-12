@@ -65,7 +65,7 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 		Assert.assertTrue(digitaldownloads.defaultViewAs(), "Not displaying Grid option");
 		
 		digitaldownloads.clickOnAlbumLink();
-
+//add
 
 		ThirdAlbumPage thirdalbum = new ThirdAlbumPage(driver);
 		//thirdalbum.clickOn3rdAlbumLink();
