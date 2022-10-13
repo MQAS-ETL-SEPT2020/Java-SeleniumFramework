@@ -17,12 +17,13 @@ public class CheckoutPage {
 	By Email = By.id("BillingNewAddress_Email");
 	By Company = By.id("BillingNewAddress_Company");
 	By CountryId = By.id("BillingNewAddress_CountryId");
+	By CountryName = By.xpath("//option[text()='India']");
 	By City = By.id("BillingNewAddress_City");
 	By Address1 = By.id("BillingNewAddress_Address1");
 	By ZipPostalCode = By.id("BillingNewAddress_ZipPostalCode");
 	By PhoneNumber = By.id("BillingNewAddress_PhoneNumber");
 	By Continue = By.xpath("//input[@onclick='Billing.save()']");
-	
+
 	By ShippingAddress = By.xpath("//h2[text()='Shipping address']");
 	By ShippingAddressdropdown = By.id("shipping-address-select");
 	By ShippingAddressdefault = By.xpath(
@@ -31,7 +32,7 @@ public class CheckoutPage {
 	WebDriver driver;
 	WebDriverWait wait;
 
-	public  CheckoutPage(WebDriver driver) {
+	public CheckoutPage(WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(driver, 10);
 	}
@@ -40,12 +41,16 @@ public class CheckoutPage {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(CheckoutPage)).isDisplayed();
 	}
 
-	public void billingDropdown() {
+	public void BillingDropdown() {
 		driver.findElement(BillingAddress).click();
 		WebElement drop1 = driver.findElement(BillingAddress);
 		Select sel1 = new Select(drop1);
 		sel1.selectByVisibleText("New Address");
 		driver.findElement(NewAddress).click();
+	}
+
+	public boolean SelectNewAddress() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(NewAddress)).isSelected();
 	}
 
 	public void EnterFirstName(String Firstname) {
@@ -73,6 +78,10 @@ public class CheckoutPage {
 		WebElement drop = driver.findElement(CountryId);
 		Select sel = new Select(drop);
 		sel.selectByVisibleText("India");
+	}
+
+	public boolean SelectCountry() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(CountryName)).isSelected();
 	}
 
 	public void EnterCityName(String Cityname) {
