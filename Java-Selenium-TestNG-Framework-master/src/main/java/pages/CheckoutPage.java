@@ -26,9 +26,19 @@ public class CheckoutPage {
 
 	By ShippingAddress = By.xpath("//h2[text()='Shipping address']");
 	By ShippingAddressdropdown = By.id("shipping-address-select");
-	By ShippingAddressdefault = By.xpath(
-			"(//option[text()='vani gowda, #62 7th cross Jai maruti nagar nandini layout, Bangalore 560096, India'])[2]");
-
+	By ShippingNewAddress = By.xpath(("//option[text()='New Address'])[2]"));
+	//By ShippingFirstName = By.id("BillingNewAddress_FirstName");
+	//By LastName = By.id("BillingNewAddress_LastName");
+	//By Email = By.id("BillingNewAddress_Email");
+	By ShippingCompany = By.id("ShippingNewAddress_Company");
+	By ShippingCountryId = By.id("ShippingNewAddress_CountryId");
+	By ShippingCountryName = By.xpath("//option[text()='India']");
+	By ShippingCity = By.id("ShippingNewAddress_City");
+	By ShippingAddress1 = By.id("ShippingNewAddress_Address1");
+	By ShipppingZipPostalCode = By.id("ShippingNewAddress_ZipPostalCode");
+	By ShippingPhoneNumber = By.id("ShippingNewAddress_PhoneNumber");
+	By ShippingContinue = By.xpath("//input[@onclick='Shipping.save()']");
+	
 	WebDriver driver;
 	WebDriverWait wait;
 
@@ -108,30 +118,59 @@ public class CheckoutPage {
 		driver.findElement(Continue).click();
 
 	}
+
+ public boolean isShippingAddressDisplayed()
+ {
+ return wait.until(ExpectedConditions.visibilityOfElementLocated(ShippingAddress)).isDisplayed();
+
 }
+ public void shippingDropdown() {
+		driver.findElement(ShippingAddressdropdown).click();
+		WebElement drop3 = driver.findElement(ShippingNewAddress);
+		Select sel3 = new Select(drop3);
+		sel3.selectByVisibleText("New Address");
+		driver.findElement(NewAddress).click();
+	}
 
-// public boolean shippingaddresspage()
-// {
-// return
-// wait.until(ExpectedConditions.visibilityOfElementLocated(ShippingAddress)).isDisplayed();
+ public void shippingEnterCompanyName(String Companyname) {
+		driver.findElement(Company).clear();
+		driver.findElement(Company).sendKeys(Companyname);
+	}
 
-// }
-// public void clickshippingaddressdropdown()
-// {
-// driver.findElement(ShippingAddressdropdown).click();
+	public void shippingCountryDropdown() {
+		driver.findElement(CountryId).click();
+		WebElement drop = driver.findElement(CountryId);
+		Select sel = new Select(drop);
+		sel.selectByVisibleText("India");
+	}
 
-//
+	public boolean shippingSelectCountry() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(CountryName)).isSelected();
+	}
 
-// public void selectshippingaddressdropdown()
-//
+	public void shippingEnterCityName(String Cityname) {
+		driver.findElement(City).clear();
+		driver.findElement(City).sendKeys(Cityname);
+	}
 
-// driver.findElement(ShippingAddressdefault).click();
-// WebElement drop2 = driver.findElement(BillingAddress);
-// Select sel2=new Select(drop2);
-// sel2.selectByVisibleText("ShippingAddressdefault");
-// driver.findElement(ShippingAddressdefault).click();
-// }
+	public void shippingEnterAddress1(String Address) {
+		driver.findElement(Address1).clear();
+		driver.findElement(Address1).sendKeys(Address);
+	}
 
+	public void shippingEnterZipCode(String ZipCode) {
+		driver.findElement(ZipPostalCode).clear();
+		driver.findElement(ZipPostalCode).sendKeys(ZipCode);
+	}
+
+	public void shippingEnterMobileNumber(String Mobilenumber) {
+		driver.findElement(PhoneNumber).clear();
+		driver.findElement(PhoneNumber).sendKeys(Mobilenumber);
+	}
+ 
+ 
+ 
+ }
 // }
 
 //<<Default Checkout page>>

@@ -1,29 +1,15 @@
 package tests;
 
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import static org.testng.Assert.assertTrue;
-
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.LogStatus;
-
 import pages.BasePage;
-import pages.DemoCheckoutPage;
-import pages.HomePage;
-
+import pages.CheckoutPage;
 import pages.JewelShoppingPage;
-import pages.NecklacePage;
-
 import pages.JewelleryPage;
 import pages.LoginPage1;
+import pages.NecklacePage;
 
 public class TC_06_JewelryPageText extends BasePage
 {
@@ -94,39 +80,59 @@ public class TC_06_JewelryPageText extends BasePage
 		Reporter.log("Checkoutpage is displaying",true);
 		Assert.assertTrue(cartpage.checkoutpage(),"not displaying checkoutpage");
 		
-		DemoCheckoutPage address=new DemoCheckoutPage(driver);
-		address.addbilladdress();
+		CheckoutPage address=new CheckoutPage(driver);
+		address.BillingDropdown();
 		Reporter.log("clicking on BillingAddress dropdown",true);
 		
-		address.addbilladdress();
+		address.ClickOnContinueInBillingAddress();
 		Reporter.log("Entering BillingAddress dropdown",true);
 		
-		address.Fname();
-		Reporter.log("Entering Firstname dropdown",true);
-		address.Lname();
-		Reporter.log("Entering Lastname dropdown",true);
-		address.emailid();
-		Reporter.log("Entering Emailid dropdown",true);
-		address.companyname();
+		address.EnterFirstName("Vanishree");
+		Reporter.log("Entering Firstname",true);
+		address.EnterLastName("gowda");
+		Reporter.log("Entering Lastname",true);
+		address.EnterEmailId("vanigowdas54@gmail.com");
+		Reporter.log("Entering Emailid",true);
+		address.EnterCompanyName("TestYantra");
 		Reporter.log("Entering company dropdown",true);
-		address.countryaddress();
+		address.CountryDropdown();
 		Reporter.log("select Country India dropdown",true);
-		address.cityname();
+		address.EnterCityName("Bengaluru");
 		Reporter.log("Entering Country name",true);
-		address.addressone();
+		address.EnterAddress1("#62 jai maruti nagar nandini layout");
 		Reporter.log("Entering Address1 ",true);
-		address.zipcode();
+		address.EnterZipCode("560096");
 		Reporter.log("Entering Pincode",true);
-		address.mobilenum();
+		address.EnterMobileNumber("7411313729");
 		Reporter.log("Entering Mobile number",true);
-		address.billcontinue();
+		address.ClickOnContinueInBillingAddress();
 		Reporter.log("clicking on continue button",true);
 		
-	//	address.shippingaddresspage();
-		//Reporter.log("ShippingAdress Page is dispalyed",true);
-		//Assert.assertTrue(cartpage.shoppingcartPage(), "Shipping Address page is displayed");
+	   address.isShippingAddressDisplayed();
+	   Reporter.log("ShippingAdress Page is dispalyed",true);
+	   Assert.assertTrue(cartpage.shoppingcartPage(), "Shipping Address page is not displayed");
 		
-		//address.clickshippingaddressdropdown();
+	   
+	   address.shippingDropdown();
+	   address.shippingEnterCompanyName("MQAS");
+	   address.CountryDropdown();
+	   address.shippingSelectCountry();
+	   address.shippingEnterCityName("Mysore");
+	   address.shippingEnterAddress1("#62,7thcross jai maruti nagar");
+	   address.EnterZipCode("560096");
+	   address.shippingEnterMobileNumber("7411313729");
+//		address.shippingDropdown();
+//		//address.selectShippingAddressdropdown();
+//		address.shippingEnterCompanyName("MQAS");
+//		address.shippingCountryDropdown();
+//		address.selectShippingAddressdropdown();
+//		address.shippingEnterCityName("Bengaluru");
+//		address.shippingEnterAddress1("#62,7th cross jai maruti nagar");
+//		address.shippingEnterZipCode("560096");
+//		address.shippingEnterMobileNumber("7411313729");
+//		
+		
+	}
 		
 	//	address.selectshippingaddressdropdown();
 		
@@ -135,34 +141,5 @@ public class TC_06_JewelryPageText extends BasePage
 		
 	}
 	
-}
+
 	
-//}
-
-
-
-//}
-//		
-
-//		jewel.SortPosition();
-//		jewel.ViewPage();
-//		jewel.ClickOnImage();
-
-/*
- * AddToCartPage Add=new AddToCartPage(driver); Add.MaterialType(); Add.size();
- * Add.shape(); Add.Cart();
- */
-
-// NecklacePage necklace = new NecklacePage(driver);
-// necklace.Addproduct();
-// necklace.Addtowishlist();
-
-// JewelShoppingPage shop = new JewelShoppingPage(driver);
-// shop.ClickOnshoppingcart();
-// shop.checkTermsandcondtions();
-// shop.Checkout();
-
-// private void assertTrue(Object jewelText, String message) {
-// TODO Auto-generated method stub
-
-// }
