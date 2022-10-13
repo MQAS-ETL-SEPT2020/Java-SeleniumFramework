@@ -8,18 +8,21 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckoutPage {
+
+	By CheckoutPage = By.xpath("//h1[text()='Checkout']");
 	By BillingAddress = By.id("billing-address-select");
 	By NewAddress = By.xpath("//option[text()='New Address']");
 	By FirstName = By.id("BillingNewAddress_FirstName");
 	By LastName = By.id("BillingNewAddress_LastName");
 	By Email = By.id("BillingNewAddress_Email");
 	By Company = By.id("BillingNewAddress_Company");
-	By AddressCountry = By.id("BillingNewAddress_CountryId");
+	By CountryId = By.id("BillingNewAddress_CountryId");
 	By City = By.id("BillingNewAddress_City");
 	By Address1 = By.id("BillingNewAddress_Address1");
-	By Zipcode = By.id("BillingNewAddress_ZipPostalCode");
-	By phonenumber = By.id("BillingNewAddress_PhoneNumber");
+	By ZipPostalCode = By.id("BillingNewAddress_ZipPostalCode");
+	By PhoneNumber = By.id("BillingNewAddress_PhoneNumber");
 	By Continue = By.xpath("//input[@onclick='Billing.save()']");
+	
 	By ShippingAddress = By.xpath("//h2[text()='Shipping address']");
 	By ShippingAddressdropdown = By.id("shipping-address-select");
 	By ShippingAddressdefault = By.xpath(
@@ -28,13 +31,16 @@ public class CheckoutPage {
 	WebDriver driver;
 	WebDriverWait wait;
 
-	public DemoCheckoutPage(WebDriver driver) {
-			this.driver = driver;
-			wait = new WebDriverWait(driver, 10);
+	public  CheckoutPage(WebDriver driver) {
+		this.driver = driver;
+		wait = new WebDriverWait(driver, 10);
+	}
 
-		}
+	public boolean isCheckOutPageSuccesful() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(CheckoutPage)).isDisplayed();
+	}
 
-	public void addbilladdress() {
+	public void billingDropdown() {
 		driver.findElement(BillingAddress).click();
 		WebElement drop1 = driver.findElement(BillingAddress);
 		Select sel1 = new Select(drop1);
@@ -42,54 +48,54 @@ public class CheckoutPage {
 		driver.findElement(NewAddress).click();
 	}
 
-	public void Fname() {
+	public void EnterFirstName(String Firstname) {
 		driver.findElement(FirstName).clear();
-		driver.findElement(FirstName).sendKeys("Vanigowda");
+		driver.findElement(FirstName).sendKeys(Firstname);
 	}
 
-	public void Lname() {
+	public void EnterLastName(String Lastname) {
 		driver.findElement(LastName).clear();
-		driver.findElement(LastName).sendKeys("L");
+		driver.findElement(LastName).sendKeys(Lastname);
 	}
 
-	public void emailid() {
+	public void EnterEmailId(String Emailid) {
 		driver.findElement(Email).clear();
-		driver.findElement(Email).sendKeys("vanigowdas54@gmail.com");
+		driver.findElement(Email).sendKeys(Emailid);
 	}
 
-	public void companyname() {
+	public void EnterCompanyName(String Companyname) {
 		driver.findElement(Company).clear();
-		driver.findElement(Company).sendKeys("TestYantra");
+		driver.findElement(Company).sendKeys(Companyname);
 	}
 
-	public void countryaddress() {
-		driver.findElement(AddressCountry).click();
-		WebElement drop = driver.findElement(AddressCountry);
+	public void CountryDropdown() {
+		driver.findElement(CountryId).click();
+		WebElement drop = driver.findElement(CountryId);
 		Select sel = new Select(drop);
 		sel.selectByVisibleText("India");
 	}
 
-	public void cityname() {
+	public void EnterCityName(String Cityname) {
 		driver.findElement(City).clear();
-		driver.findElement(City).sendKeys("Bengaluru");
+		driver.findElement(City).sendKeys(Cityname);
 	}
 
-	public void addressone() {
+	public void EnterAddress1(String Address) {
 		driver.findElement(Address1).clear();
-		driver.findElement(Address1).sendKeys("#62,jai maruti nagar");
+		driver.findElement(Address1).sendKeys(Address);
 	}
 
-	public void zipcode() {
-		driver.findElement(Zipcode).clear();
-		driver.findElement(Zipcode).sendKeys("560099");
+	public void EnterZipCode(String ZipCode) {
+		driver.findElement(ZipPostalCode).clear();
+		driver.findElement(ZipPostalCode).sendKeys(ZipCode);
 	}
 
-	public void mobilenum() {
-		driver.findElement(phonenumber).clear();
-		driver.findElement(phonenumber).sendKeys("7411313729");
+	public void EnterMobileNumber(String Mobilenumber) {
+		driver.findElement(PhoneNumber).clear();
+		driver.findElement(PhoneNumber).sendKeys(Mobilenumber);
 	}
 
-	public void billcontinue() {
+	public void ClickOnContinueInBillingAddress() {
 		driver.findElement(Continue).click();
 
 	}
