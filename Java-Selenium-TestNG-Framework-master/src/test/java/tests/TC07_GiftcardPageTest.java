@@ -104,7 +104,10 @@ public class TC07_GiftcardPageTest extends BasePage  {
     	 @Test
     	 public void ClickContinue_Button() {
         	 CheckoutPage1 checkpage=new CheckoutPage1(driver);
-        	 checkpage.ClickContinue_Button();
+        	 checkpage.BillingAddress_dropdown();//Verifying Billing Address Dropdown
+        	 Reporter.log("Verifying the Billing Address dropdown is displayed",true);
+        	 Assert.assertTrue(checkpage.BillingAddress_dropdown(),"Billing Address dropdown is not displayed");
+        	// checkpage.ClickContinue_Button();
         	 
 
     	 
