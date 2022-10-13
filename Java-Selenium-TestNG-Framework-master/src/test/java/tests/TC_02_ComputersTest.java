@@ -5,6 +5,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import pages.BasePage;
+import pages.CheckoutPage;
 import pages.ComputersPage;
 import pages.HomePage;
 import pages.LoginPage1;
@@ -127,53 +128,34 @@ public class TC_02_ComputersTest extends BasePage {
 		Reporter.log(" default Qty as 1", true);
 		Assert.assertTrue(computer.DefaultQuality(), "default Qty as 1 ");
 		
-//		computer.CheckBox();
-//		computer.CheckboxText();
-//		Thread.sleep(5000);
-//		Reporter.log("Clicked on terms check box", true);
-//		Assert.assertTrue(computer.CheckboxText(), "Not Clicked on terms check box ");
-//
-//		computer.CheckoutButton();
-//		computer.CheckoutText();
-//		Thread.sleep(5000);
-//		Reporter.log("Billing Address page is displayed ", true);
-//		Assert.assertTrue(computer.CheckoutText(), " Billing Address page is not displayed");
-//
-//		computer.AddressBook();
-//		Reporter.log("By default billing address is displayed ", true);
-//		Assert.assertTrue(computer.AddressBook(), " By default billing address page is not displayed");
-//
-//		computer.continueInBilling();
-//		computer.ShippingText();
-//		Thread.sleep(5000);
-//		Reporter.log("Shipping page is displayed", true);
-//		Assert.assertTrue(computer.ShippingText(), " Shipping page is not displayed ");
-//
-//		computer.clickOnContinueInShipping();
-//		computer.ShippingInGround();
-//		Reporter.log("By default shipping method as Ground is selected", true);
-//		Assert.assertTrue(computer.ShippingText(), " Shipping page is not displayed ");
-//
-//		computer.continuuButtonInshippingMethod();
-//		computer.PaymentMethodPage();
-//		computer.CashOnDeliveryButton();
-//		Reporter.log("By default Cash on delivery redio button is selected", true);
-//		Assert.assertTrue(computer.CashOnDeliveryButton(), " By default Cash on delivery redio button not selected ");
-//
-//		computer.continuuButtonInPaymentMethod();
-//		computer.paymentinformation();
-//		Thread.sleep(5000);
-//		Reporter.log("payment information page is displayed", true);
-//		Assert.assertTrue(computer.paymentinformation(), " payment information page is not displayed");
-//
-//		computer.message();
-//		Reporter.log("payment conformtion message  is displayed", true);
-//		Assert.assertTrue(computer.message(), " payment conformtion message is not displayed");
+		//VERIFY "price" as "1200.00"
+		computer.defaultAmount();
+		Reporter.log(" default price as 1200.00", true);
+		Assert.assertTrue(computer.DefaultQuality(), "default price as 1200.00 ");
+		
+		//VERIFY checkin "terms and conditions" checbox
+		computer.CheckBox();
+		Thread.sleep(5000);
+		Reporter.log("Clicked on terms check box", true);
 
-//		computer.ContinueButtonInPaymentInformation();
-//		computer.confirmPage();
-//		Reporter.log("payment conformtion page  is displayed", true);
-//		Assert.assertTrue(computer.confirmPage(), " payment conformtion page is not displayed");
-
+		//VERIFY "Checkout" button should be available
+		computer.CheckoutButton();
+		computer.CheckoutText();
+		Thread.sleep(5000);
+		Reporter.log("Billing Address page is displayed ", true);
+		Assert.assertTrue(computer.CheckoutText(), " Billing Address page is not displayed");
+ 
+		CheckoutPage checkout=new CheckoutPage(driver);
+		checkout.BillingDropdown();
+        checkout.EnterFirstName("Preeti");
+        checkout.EnterLastName("shabadi");
+        checkout.EnterEmailId("lalipreeti9@gmail.com");
+        checkout.EnterCompanyName("Test Yantra");
+        checkout.CountryDropdown();
+        checkout.EnterCityName("Bangalore");
+        checkout.EnterAddress1("#51 Preeti s Wardnumber-01 ilkal");
+        checkout.EnterZipCode("587125");
+        checkout.EnterMobileNumber("9019139736");
+        checkout.ClickOnContinueInBillingAddress();
 	}
 }
