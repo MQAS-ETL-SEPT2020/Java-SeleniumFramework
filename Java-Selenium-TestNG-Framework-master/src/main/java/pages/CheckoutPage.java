@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class CheckoutPage {
 
 	By CheckoutPage = By.xpath("//h1[text()='Checkout']");
+	By BillingAddressField = By.xpath("//h2[text()='Billing address']");
 	By BillingAddress = By.id("billing-address-select");
 	By NewAddress = By.xpath("//option[text()='New Address']");
 	By FirstName = By.id("BillingNewAddress_FirstName");
@@ -27,9 +28,9 @@ public class CheckoutPage {
 	By ShippingAddress = By.xpath("//h2[text()='Shipping address']");
 	By ShippingAddressdropdown = By.id("shipping-address-select");
 	By ShippingNewAddress = By.xpath(("//option[text()='New Address'])[2]"));
-	//By ShippingFirstName = By.id("BillingNewAddress_FirstName");
-	//By LastName = By.id("BillingNewAddress_LastName");
-	//By Email = By.id("BillingNewAddress_Email");
+	// By ShippingFirstName = By.id("BillingNewAddress_FirstName");
+	// By LastName = By.id("BillingNewAddress_LastName");
+	// By Email = By.id("BillingNewAddress_Email");
 	By ShippingCompany = By.id("ShippingNewAddress_Company");
 	By ShippingCountryId = By.id("ShippingNewAddress_CountryId");
 	By ShippingCountryName = By.xpath("//option[text()='India']");
@@ -38,7 +39,7 @@ public class CheckoutPage {
 	By ShipppingZipPostalCode = By.id("ShippingNewAddress_ZipPostalCode");
 	By ShippingPhoneNumber = By.id("ShippingNewAddress_PhoneNumber");
 	By ShippingContinue = By.xpath("//input[@onclick='Shipping.save()']");
-	
+
 	WebDriver driver;
 	WebDriverWait wait;
 
@@ -49,6 +50,14 @@ public class CheckoutPage {
 
 	public boolean isCheckOutPageSuccesful() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(CheckoutPage)).isDisplayed();
+	}
+
+	public boolean isBillingAddressDisplayed() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(BillingAddressField)).isDisplayed();
+	}
+
+	public boolean isContinueButtonDisplayed() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(Continue)).isDisplayed();
 	}
 
 	public void BillingDropdown() {
@@ -119,12 +128,12 @@ public class CheckoutPage {
 
 	}
 
- public boolean isShippingAddressDisplayed()
- {
- return wait.until(ExpectedConditions.visibilityOfElementLocated(ShippingAddress)).isDisplayed();
+	public boolean isShippingAddressDisplayed() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(ShippingAddress)).isDisplayed();
 
-}
- public void shippingDropdown() {
+	}
+
+	public void shippingDropdown() {
 		driver.findElement(ShippingAddressdropdown).click();
 		WebElement drop3 = driver.findElement(ShippingNewAddress);
 		Select sel3 = new Select(drop3);
@@ -132,7 +141,7 @@ public class CheckoutPage {
 		driver.findElement(NewAddress).click();
 	}
 
- public void shippingEnterCompanyName(String Companyname) {
+	public void shippingEnterCompanyName(String Companyname) {
 		driver.findElement(Company).clear();
 		driver.findElement(Company).sendKeys(Companyname);
 	}
@@ -167,10 +176,8 @@ public class CheckoutPage {
 		driver.findElement(PhoneNumber).clear();
 		driver.findElement(PhoneNumber).sendKeys(Mobilenumber);
 	}
- 
- 
- 
- }
+
+}
 // }
 
 //<<Default Checkout page>>
