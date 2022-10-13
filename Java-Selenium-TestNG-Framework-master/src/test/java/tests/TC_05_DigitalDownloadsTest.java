@@ -5,6 +5,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import pages.BasePage;
+import pages.CheckoutPage;
 import pages.DigitalDownloadsPage;
 import pages.HomePage;
 import pages.LoginPage1;
@@ -109,16 +110,17 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 		shoppingcart.clickOnCheckOut();
 		Reporter.log("Clicking on CheckOut checkbox", true);
 	}
-}
-//	@Test(priority = 6)
-//	public void navigateToThankYouPage() {
 
-//		CheckoutPage checkout = new CheckoutPage(driver);
-//		Reporter.log("Displaying Check Out page", true);
-//		Assert.assertTrue(checkout.isCheckOutPageSuccesful(), "Not displaying Check out page");
-//
+	@Test(priority = 6)
+	public void navigateToThankYouPage() {
+
+		CheckoutPage checkout = new CheckoutPage(driver);
+		Reporter.log("Displaying Check Out page", true);
+		Assert.assertTrue(checkout.isCheckOutPageSuccesful(), "Not displaying Check out page");
+
+//		checkout.billingDropdown();
 //		Reporter.log("Selecting New Address", true);
-//		Assert.assertTrue(checkout.selectNewAddress(), "Not selecting new address");
+//		//Assert.assertTrue(checkout., "Not selecting new address");
 //
 //		Reporter.log("Selecting Country as India ", true);
 //		Assert.assertTrue(checkout.selectNewAddress(), "Not selecting Country as India");
@@ -134,7 +136,6 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 //		
 //		checkout.phoneNumber("9874563210");
 //		Reporter.log("Entering phone number in Phone number textfield", true);
-//
-//
-//	}
 
+	}
+}
