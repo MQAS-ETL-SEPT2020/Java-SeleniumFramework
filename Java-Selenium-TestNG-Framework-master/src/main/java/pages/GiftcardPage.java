@@ -4,9 +4,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GiftcardPage extends BasePage {
@@ -14,11 +12,13 @@ public class GiftcardPage extends BasePage {
 	By Giftcards_Menu=By.xpath("//ul[@class='top-menu']//li[7]");
 	By Giftcards_text=By.xpath("//h1[text()='Gift Cards']");
 	By Sortby_Dropdown=By.xpath("//select[@id='products-orderby']");
+	By postion_Option=By.xpath("//option[text()='Position']");
 	By DisplayperPage_Dropdown=By.xpath("//select[@id='products-pagesize']");
+	By eight_option=By.xpath("//option[text()='8']");
 	By Viewas_Dropdown=By.id("products-viewmode");
-	By Product1=By.xpath("//a[text()='$5 Virtual Gift Card']");
-	By AddyourReview_Link=By.xpath("//a[text()='Add your review']");
-
+	By Grid_option=By.xpath("//option[text()='Grid']");
+	By Vitual_giftcardProduct=By.xpath("//div[@class='product-grid']//a[text()='$25 Virtual Gift Card']");
+	
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -36,54 +36,26 @@ public class GiftcardPage extends BasePage {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(Giftcards_text)).isDisplayed();
 	}
 
-	public void ClickSortBy_Dropdown() {
-		driver.findElement(Sortby_Dropdown).click();
+
+	public boolean DefaultPostion_option() { //Asserting Position option in  Sortby Dropdown
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(postion_Option)).isDisplayed();
 	}
 
-	public boolean sortbyoptions() { // Asserting  Sortby dropdown method
-		WebElement dropdown1 = wait.until(ExpectedConditions.visibilityOfElementLocated(Sortby_Dropdown));
-		Select sel=new Select(dropdown1);
-		for (WebElement Element : sel.getOptions()) {
-			Element.isDisplayed();
-		}
 
-		return true;
+	public boolean Default8_option() { //Asserting 8 Option in Display per page Dropdown
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(eight_option)).isDisplayed();
 	}
 
-	public void ClickDisplayperpage_Dropdown() {
-		driver.findElement(DisplayperPage_Dropdown);
+
+	public boolean DefaultGrid_option() { //Asserting Grid option in View as Dropdown
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(Grid_option)).isDisplayed();
 	}
 
-	public boolean displayperPageoptions() { // Asserting  display per page dropdown method
-		WebElement dropdown2 = wait.until(ExpectedConditions.visibilityOfElementLocated(DisplayperPage_Dropdown));
-		Select sel=new Select(dropdown2);
-		for (WebElement Element : sel.getOptions()) {
-			Element.isDisplayed();
 
-		}
-		return true;
+	public void ClickVitualGiftcardProduct() {//Clicking on $5 Vitual Giftcard {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Vitual_giftcardProduct)).click();
 	}
-
-	public void Clickviewas_Dropdown() {
-		driver.findElement(Viewas_Dropdown).click();
-	}
-
-	public boolean Viewasoptions() {   //Asserting Viewas dropdown method
-		WebElement dropdown3 = wait.until(ExpectedConditions.visibilityOfElementLocated(Viewas_Dropdown));
-		Select sel=new Select(dropdown3);
-		for (WebElement Element : sel.getOptions()) {
-			Element.isDisplayed();
-
-		}
-		return true;
-	}
-     
-	 public void ClickVitualGiftcardProduct() {
-		 driver.findElement(Product1).click();
-		  }
-	 
-	 public boolean Addtoreviewlink() { //Asserting $5 Vitual Giftcard product clicking
-		 return wait.until(ExpectedConditions.visibilityOfElementLocated(AddyourReview_Link)).isDisplayed();
-	 }
-
+ 
+	
+	
 }
