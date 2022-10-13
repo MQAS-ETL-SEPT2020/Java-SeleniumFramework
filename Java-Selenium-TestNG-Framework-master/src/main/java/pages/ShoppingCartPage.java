@@ -9,7 +9,8 @@ public class ShoppingCartPage {
 
 	By shoppingCart = By.xpath("//span[text()='Shopping cart']");
 	By shoppingCartPage = By.xpath("//h1[text()='Shopping cart']");
-	By termsAndConditions = By.id("termsofservice");
+	By termsOfService=By.xpath("//div[@class=\"terms-of-service\"]");
+	By termsOfServiceCheckbox = By.id("termsofservice");
 	By checkOut = By.id("checkout");
 
 	public WebDriver driver;
@@ -24,17 +25,18 @@ public class ShoppingCartPage {
 		driver.findElement(shoppingCart).click();
 	}
 
-	public boolean shoppingCart() {
+	public boolean isShoppingCartPageSuccessful() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(shoppingCartPage)).isDisplayed();
 	}
 
-	public void clickOnTermsAndConditions() {
-		driver.findElement(termsAndConditions).click();
+	public void clickOnTermsOfService() {
+		driver.findElement(termsOfServiceCheckbox).click();
 	}
 
-	public boolean termsAndCondition() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(termsAndConditions)).isSelected();
+	public boolean termsOfServiceSelected() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(termsOfServiceCheckbox)).isSelected();
 	}
+
 
 	public void clickOnCheckOut() {
 		driver.findElement(checkOut).click();
