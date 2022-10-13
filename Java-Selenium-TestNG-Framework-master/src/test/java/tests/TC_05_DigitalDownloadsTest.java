@@ -113,7 +113,7 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 
 	@Test(priority = 6)
 	public void navigateToThankYouPage() {
-
+//
 		CheckoutPage checkout = new CheckoutPage(driver);
 		Reporter.log("Displaying Check Out page", true);
 		Assert.assertTrue(checkout.isCheckOutPageSuccesful(), "Not displaying Check out page");
