@@ -4,8 +4,8 @@ package tests;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
 import pages.BasePage;
-import pages.CheckoutPage1;
 import pages.GiftcardPage;
 import pages.LoginPage1;
 import pages.VirtualGiftcard_ProductPage;
@@ -94,32 +94,6 @@ public class TC07_GiftcardPageTest extends BasePage  {
     	 VirtualGiftcard_ProductPage productpage=new VirtualGiftcard_ProductPage(driver);
     	 productpage.ClickCheckout_Button();//clicking on Checkout Button
     	 Reporter.log("Clicking on Checkout Button",true);
-    	 CheckoutPage1 checkpage=new CheckoutPage1(driver);
-    	 Assert.assertTrue(checkpage.BillingAddress_Text(),"Not clicking on Checkout Button");
-    	 checkpage.Continue_Button();
-    	 Reporter.log("Verifying Continue Button is Displayed");
-    	 Assert.assertTrue(checkpage.Continue_Button(),"Continue Button is not Displayed");
      }
     	 
-    	 @Test
-    	 public void ClickContinue_Button() {
-        	 CheckoutPage1 checkpage=new CheckoutPage1(driver);
-        	 checkpage.BillingAddress_dropdown();//Verifying Billing Address Dropdown
-        	 Reporter.log("Verifying the Billing Address dropdown is displayed",true);
-        	 Assert.assertTrue(checkpage.BillingAddress_dropdown(),"Billing Address dropdown is not displayed");
-        	// checkpage.ClickContinue_Button();
-        	 
-
-    	 
-	}
 }
-
-
-
-
-
-
-
-
-
-
