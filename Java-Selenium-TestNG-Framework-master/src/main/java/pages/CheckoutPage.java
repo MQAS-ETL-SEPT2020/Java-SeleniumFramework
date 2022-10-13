@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckoutPage {
-
+ //Billing Address Field
 	By CheckoutPage = By.xpath("//h1[text()='Checkout']");
 	By BillingAddressField = By.xpath("//h2[text()='Billing address']");
 	By BillingAddress = By.id("billing-address-select");
@@ -25,6 +25,7 @@ public class CheckoutPage {
 	By PhoneNumber = By.id("BillingNewAddress_PhoneNumber");
 	By Continue = By.xpath("//input[@onclick='Billing.save()']");
 
+	//Shipping Address feild
 	By ShippingAddress = By.xpath("//h2[text()='Shipping address']");
 	By ShippingAddressdropdown = By.id("shipping-address-select");
 	By ShippingNewAddress = By.xpath(("//option[text()='New Address'])[2]"));
@@ -39,6 +40,14 @@ public class CheckoutPage {
 	By ShipppingZipPostalCode = By.id("ShippingNewAddress_ZipPostalCode");
 	By ShippingPhoneNumber = By.id("ShippingNewAddress_PhoneNumber");
 	By ShippingContinue = By.xpath("//input[@onclick='Shipping.save()']");
+	
+	//Payment Method
+	By CashonDelivery_RadioButton=By.xpath("Cash On Delivery (COD) (7.00)");
+	By CheckMoney_OrderRadioButton=By.xpath("//label[text()='Check / Money Order (5.00)']");
+	By Creditcard_RadioButton=By.xpath("//label[text()='Credit Card']");
+	By PurchaseOrder_RadioButton=By.xpath("//label[text()='Purchase Order']");
+	By Back_Button=By.xpath("(//a[text()='Back'])[1]");
+	
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -177,6 +186,13 @@ public class CheckoutPage {
 		driver.findElement(PhoneNumber).sendKeys(Mobilenumber);
 	}
 
+	public boolean Radiobuttons_isdisplayed() {
+	 wait.until(ExpectedConditions.visibilityOfElementLocated(CashonDelivery_RadioButton)).isDisplayed();
+	wait.until(ExpectedConditions.visibilityOfElementLocated(CheckMoney_OrderRadioButton)).isDisplayed();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Creditcard_RadioButton)).isDisplayed();
+		  wait.until(ExpectedConditions.visibilityOfElementLocated(PurchaseOrder_RadioButton)).isDisplayed();
+		  return true;
+	}
 }
 // }
 

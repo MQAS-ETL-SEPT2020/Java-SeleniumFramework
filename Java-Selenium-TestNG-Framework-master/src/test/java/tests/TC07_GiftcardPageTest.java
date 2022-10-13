@@ -6,6 +6,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import pages.BasePage;
+import pages.CheckoutPage;
 import pages.GiftcardPage;
 import pages.LoginPage1;
 import pages.VirtualGiftcard_ProductPage;
@@ -90,10 +91,21 @@ public class TC07_GiftcardPageTest extends BasePage  {
     	   }
      
      @Test(priority=5)
-     public void ClickCheckout_Button() {
+     public void ClickCheckout_Button() { //Assert Methods are missing
     	 VirtualGiftcard_ProductPage productpage=new VirtualGiftcard_ProductPage(driver);
     	 productpage.ClickCheckout_Button();//clicking on Checkout Button
     	 Reporter.log("Clicking on Checkout Button",true);
-     }
+    	 CheckoutPage checkpage=new CheckoutPage(driver);
+    	 checkpage.ClickOnContinueInBillingAddress();
+    	 Reporter.log("Clicking on Continue Button",true);
     	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+     }
 }
+    	 
+
