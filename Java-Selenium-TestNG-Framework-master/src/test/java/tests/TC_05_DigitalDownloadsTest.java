@@ -5,7 +5,6 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import pages.BasePage;
-import pages.CheckoutPage;
 import pages.DigitalDownloadsPage;
 import pages.HomePage;
 import pages.LoginPage1;
@@ -110,32 +109,32 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 		shoppingcart.clickOnCheckOut();
 		Reporter.log("Clicking on CheckOut checkbox", true);
 	}
-
-	@Test(priority = 6)
-	public void navigateToThankYouPage() {
-
-		CheckoutPage checkout = new CheckoutPage(driver);
-		Reporter.log("Displaying Check Out page", true);
-		Assert.assertTrue(checkout.isCheckOutPageSuccesful(), "Not displaying Check out page");
-
-		Reporter.log("Selecting New Address", true);
-		Assert.assertTrue(checkout.selectNewAddress(), "Not selecting new address");
-
-		Reporter.log("Selecting Country as India ", true);
-		Assert.assertTrue(checkout.selectNewAddress(), "Not selecting Country as India");
-
-		checkout.cityName("Bengaluru");
-		Reporter.log("Entering cityname in City textfield", true);
-           
-		checkout.address1("Katreguppe,Banashankari");
-		Reporter.log("Entering address in Address1 textfield", true);
-  
-		checkout.zip("560085");
-		Reporter.log("Entering zipcode in Zip textfield", true);
-		
-		checkout.phoneNumber("9874563210");
-		Reporter.log("Entering phone number in Phone number textfield", true);
-
-
-	}
 }
+//	@Test(priority = 6)
+//	public void navigateToThankYouPage() {
+
+//		CheckoutPage checkout = new CheckoutPage(driver);
+//		Reporter.log("Displaying Check Out page", true);
+//		Assert.assertTrue(checkout.isCheckOutPageSuccesful(), "Not displaying Check out page");
+//
+//		Reporter.log("Selecting New Address", true);
+//		Assert.assertTrue(checkout.selectNewAddress(), "Not selecting new address");
+//
+//		Reporter.log("Selecting Country as India ", true);
+//		Assert.assertTrue(checkout.selectNewAddress(), "Not selecting Country as India");
+//
+//		checkout.cityName("Bengaluru");
+//		Reporter.log("Entering cityname in City textfield", true);
+//           
+//		checkout.address1("Katreguppe,Banashankari");
+//		Reporter.log("Entering address in Address1 textfield", true);
+//  
+//		checkout.zip("560085");
+//		Reporter.log("Entering zipcode in Zip textfield", true);
+//		
+//		checkout.phoneNumber("9874563210");
+//		Reporter.log("Entering phone number in Phone number textfield", true);
+//
+//
+//	}
+
