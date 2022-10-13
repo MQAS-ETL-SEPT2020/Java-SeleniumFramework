@@ -1,64 +1,77 @@
-package pages;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-public class CheckoutPage {
-	By checkOutPage = By.xpath("//h1[text()='Checkout']");
-	By billingAddress =By.xpath("//label[text()='Select a billing address from your address book or enter a new address']");
-	By newAddress = By.id("billing-address-select");
-	By city = By.id("BillingNewAddress_City");
-	By address1 = By.id("BillingNewAddress_Address1");
-	By zip = By.id("BillingNewAddress_ZipPostalCode");
-	By phoneNumber = By.id("BillingNewAddress_PhoneNumber");
-	By continue1 = By.xpath("//input[@title='Continue']");
-	By moneyOrder = By.id("paymentmethod_1");
-	By continue2 = By.className("button-1 payment-method-next-step-button");
-	By continue3 = By.className("button-1 payment-info-next-step-button");
-	By continue4 = By.className("button-1 confirm-order-next-step-button");
-	By continue5 = By.className("button-2 order-completed-continue-button");
-
-	public WebDriver driver;
-	public WebDriverWait wait;
-
-	public CheckoutPage(WebDriver driver) {
-		this.driver = driver;
-		wait = new WebDriverWait(driver, 5);
-	}
-
-	public boolean checkOutPageText() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(checkOutPage)).isDisplayed();
-	}
-
-	public void billingdropdown() {
-		WebElement billingaddress = driver.findElement(billingAddress);
-		Select address = new Select(billingaddress);
-	}
-
-	public boolean selectingNewAdress() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(newAddress)).isSelected();
-	}
-
-	public void cityName(String CityName) {
-		driver.findElement(city).sendKeys(CityName);
-	}
-
-	public void address1(String Address) {
-		driver.findElement(address1).sendKeys(Address);
-	}
-
-	public void zip(String Zipcode) {
-		driver.findElement(zip).sendKeys(Zipcode);
-	}
-
-	public void phoneNumber(String PhoneNumber) {
-		driver.findElement(phoneNumber).sendKeys(PhoneNumber);
-	}
-}
+//package pages;
+//
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.support.ui.Select;
+//import org.openqa.selenium.support.ui.WebDriverWait;
+//
+//public class CheckoutPage {
+//	By checkOutPage = By.xpath("//h1[text()='Checkout']");
+//	By billingAddress = By.id("billing-address-select"); 
+//	By selectCountry=By.id("BillingNewAddress_CountryId");
+//	By countryName=By.xpath("//option[text()='India']");
+//	By city = By.id("BillingNewAddress_City");
+//	By address1 = By.id("BillingNewAddress_Address1");
+//	By zip = By.id("BillingNewAddress_ZipPostalCode");
+//	By phoneNumber = By.id("BillingNewAddress_PhoneNumber");
+//	By continue1 = By.xpath("//input[@title='Continue']");
+//	By moneyOrder = By.id("paymentmethod_1");
+//	By continue2 = By.className("button-1 payment-method-next-step-button");
+//	By continue3 = By.className("button-1 payment-info-next-step-button");
+//	By continue4 = By.className("button-1 confirm-order-next-step-button");
+//	By continue5 = By.className("button-2 order-completed-continue-button");
+//
+//	public WebDriver driver;
+//	public WebDriverWait wait;
+//
+//	public CheckoutPage(WebDriver driver) {
+//		this.driver = driver;
+//		wait = new WebDriverWait(driver, 5);
+//	}
+//
+//	public boolean isCheckOutPageSuccesful() {
+//		return wait.until(ExpectedConditions.visibilityOfElementLocated(checkOutPage)).isDisplayed();
+//	}
+//
+//	public void billingDropdown() {
+//		WebElement billingaddress = driver.findElement(billingAddress);
+//		Select address = new Select(billingaddress);
+//		address.selectByVisibleText("New Address");
+//		driver.findElement(newAddress).click();
+//	}
+//
+//	public void countryDropdown() {
+//		WebElement country=driver.findElement(selectCountry);
+//		Select selectcountry=new Select(country);
+//		selectcountry.selectByVisibleText("India");
+//		driver.findElement(countryName).click();
+//	}
+//	
+//	public boolean selectNewAddress() {
+//		return wait.until(ExpectedConditions.visibilityOfElementLocated(newAddress)).isSelected();
+//	}
+//	
+//	public boolean selectCountry() {
+//		return wait.until(ExpectedConditions.visibilityOfElementLocated(countryName)).isSelected();
+//	}
+//	public void cityName(String CityName) {
+//		driver.findElement(city).sendKeys(CityName);
+//	}
+//
+//	public void address1(String Address) {
+//		driver.findElement(address1).sendKeys(Address);
+//	}
+//
+//	public void zip(String Zipcode) {
+//		driver.findElement(zip).sendKeys(Zipcode);
+//	}
+//
+//	public void phoneNumber(String PhoneNumber) {
+//		driver.findElement(phoneNumber).sendKeys(PhoneNumber);
+//	}
+//}
 
 //
 //package pages;
