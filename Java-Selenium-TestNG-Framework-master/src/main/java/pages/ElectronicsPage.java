@@ -8,10 +8,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ElectronicsPage {
 
 	By Camera = By.xpath("//img[@alt='Picture for category Camera, photo']");
-	By Cellphones = By.xpath("//img[@alt='Picture for category Cell phones']");
-	By SmartPhones = By.xpath("(//div[@class=\"picture\"])[1]");
+	By Cellphones = By.xpath("(//a[@title=\"Show products in category Cell phones\"])[1]");
+	By SmartPhonesAddtoCartbutton = By.xpath("(//input[@value=\"Add to cart\"])[1]");
 	By SmartPhonePrice = By.xpath("//span[@itemprop=\"price\"]");
-	By AddtocartButton = By.id("add-to-cart-button-43");
+	By AddtocartButton = By.xpath("//input[@id='add-to-cart-button-43']");
+	By HardriveCandiCam = By.xpath("//a[text()='1MP 60GB Hard Drive Handycam Camcorder']");
+	By Camcorder = By.xpath("//a[text()='Camcorder']");
+	By SlrCamrea = By.xpath("//a[text()='Digital SLR Camera 12.2 Mpixel']");
+	By HighDefinationCamcorder = By.xpath("//a[text()='High Definition 3D Camcorder']");
+	By SortbyDropdown = By.id("products-orderby");
+	By DisplayDropdown = By.id("products-pagesize");
+	By ViewasDropdown = By.id("products-viewmode");
+	By ShoppingCartLink = By.xpath("//span[text()='Shopping cart']");
+	By CountryDropdown = By.id("CountryId");
+	By PostalCode = By.id("ZipPostalCode");
+	By TermsAndServicesCheckbox = By.id("termsofservice");
+	By CheckoutButton = By.id("checkout");
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -21,28 +33,69 @@ public class ElectronicsPage {
 		wait = new WebDriverWait(driver, 10);
 	}
 
+	public void clickHardriveCandiCam() {
+		driver.findElement(HardriveCandiCam).click();
+	}
+
+	public void clickCamcorder() {
+		driver.findElement(Camcorder).click();
+	}
+
+	public void clickSlrCamrea() {
+		driver.findElement(SlrCamrea).click();
+	}
+
+	public void clickHighDefinationCamcorder() {
+		driver.findElement(HighDefinationCamcorder).click();
+	}
+
 	public void clickCameraIcon() {
 		driver.findElement(Camera).click();
 	}
 
-	public boolean clickCellPhonesIcon() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(Cellphones)).isDisplayed();
+	public void clickCellPhonesIcon() {
+		driver.findElement(Cellphones).click();
+	}
+
+	public boolean SortBydropDown() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(SortbyDropdown)).isDisplayed();
+	}
+
+	public boolean DisplayDropDown() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(DisplayDropdown)).isDisplayed();
+	}
+
+	public boolean ViewasDropDown() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(ViewasDropdown)).isDisplayed();
 	}
 
 	public void clickSmartphoneLink() {
-		driver.findElement(By.xpath("(//div[@class=\"picture\"])[1]")).click();
+		driver.findElement(SmartPhonesAddtoCartbutton).click();
 	}
 
-	public boolean verifySmartphoneQuantity() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(SmartPhones)).isDisplayed();
-	}
+	public void ShoppingcartLink() {
+		driver.findElement(ShoppingCartLink).click();
 
-	public boolean verifySmartphonePrice() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(SmartPhonePrice)).isDisplayed();
 	}
 
 	public void clickAddtoCartButton() {
-		driver.findElement(By.id("add-to-cart-button-43")).click();
+		driver.findElement(AddtocartButton).click();
+	}
+
+	public void CountryDropDown() {
+		driver.findElement(CountryDropdown).sendKeys("India");
+	}
+
+	public void PostalCode() {
+		driver.findElement(PostalCode);
+	}
+
+	public void TermsandServices() {
+		driver.findElement(TermsAndServicesCheckbox).click();
+	}
+
+	public void CheckoutButton() {
+		driver.findElement(CheckoutButton).click();
 	}
 
 }

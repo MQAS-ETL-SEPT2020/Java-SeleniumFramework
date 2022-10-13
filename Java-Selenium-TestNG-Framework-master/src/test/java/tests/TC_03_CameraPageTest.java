@@ -12,7 +12,7 @@ import pages.LoginPage1;
 public class TC_03_CameraPageTest extends BasePage {
 
 	@Test(priority = 0)
-	public void navigateToCameraPage() {
+	public void navigateToCameraPage() throws InterruptedException {
 		// clicking on login link
 		LoginPage1 loginPage = new LoginPage1(driver);
 		loginPage.clickOnLogin();
@@ -42,19 +42,40 @@ public class TC_03_CameraPageTest extends BasePage {
 		// clicking on CellPhones link.
 		electronics.clickCellPhonesIcon();
 		Reporter.log("Clicking on CellPhones link", true);
-		Assert.assertTrue(electronics.clickCellPhonesIcon());
+
+		// Verifying Default option in SortbydropDown.
+		Reporter.log("default dropdown as 'position'", true);
+		Assert.assertTrue(electronics.SortBydropDown());
+
+		// Verifying Default option in DisplaydropDown.
+		Reporter.log("default dropdown as '8'", true);
+		Assert.assertTrue(electronics.DisplayDropDown());
+
+		// Verifying Default option in ViewasdropDown.
+		Reporter.log("default dropdown as 'Grid'", true);
+		Assert.assertTrue(electronics.ViewasDropDown());
 
 		// Clicking on SmartPhoneLink.
 		electronics.clickSmartphoneLink();
 		Reporter.log("clicking on Smartphonelink", true);
 
-		// verifying the Quantity of SmartPhone.
-		electronics.verifySmartphoneQuantity();
-		Reporter.log("verifyinig the default quantity as 1", true);
+		// Clicking on ShoppingCart Link
+		electronics.ShoppingcartLink();
+		Reporter.log("selecting 'India' dropdown", true);
 
-		// Verify click on AddtoCart Button.
-		electronics.clickAddtoCartButton();
-		// Reporter.log("clicking on AddToCart button", true);
+		// Entering Postal address.
+		//electronics.PostalCode();
+		//Reporter.log("Entering postal number", true);
+
+		// Checking Terms and Conditions CheckBox.
+		electronics.TermsandServices();
+		Reporter.log("Checked Terms and Conditions checkbox", true);
+
+		// Clicking on Check Out button.
+		electronics.CheckoutButton();
+		Reporter.log("Clicking on Checkout button", true);
+		
+		//
 
 	}
 
