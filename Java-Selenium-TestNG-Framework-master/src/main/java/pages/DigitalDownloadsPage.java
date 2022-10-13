@@ -31,11 +31,11 @@ public class DigitalDownloadsPage {
 	}
 
 	// Digital Downloads page is displayed
-	public boolean digitalDownloadsPageText() {
+	public boolean isDigitalDownloadsPageSuccessful() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(digitalDownloadsPage)).isDisplayed();
 	}
 
-	public void dropdown() {
+	public void filtersDropdown() {
 		WebElement sort = driver.findElement(sortby);
 		Select sort1 = new Select(sort);
 		// sort1.selectByVisibleText("Position");
@@ -49,15 +49,15 @@ public class DigitalDownloadsPage {
 		// viewas1.selectByIndex(1);
 	}
 
-	public boolean defaultSortBy() {
+	public boolean SortBy() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(position_sortby)).isDisplayed();
 	}
 
-	public boolean defaultDisplayPerPage() {
+	public boolean DisplayPerPage() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(eight_displayPerPage)).isDisplayed();
 	}
 
-	public boolean defaultViewAs() {
+	public boolean ViewAs() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(grid_viewAs)).isDisplayed();
 	}
 
