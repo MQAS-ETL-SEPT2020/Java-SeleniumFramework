@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage1 {
@@ -12,6 +13,7 @@ public class LoginPage1 {
 	By ForgotPassword = By.xpath("//a[text()='Forgot password?']");
 	By LoginButton = By.xpath("//input[@class='button-1 login-button']");
 	By RegisterButton = By.xpath("//input[@class='button-1 register-button']");
+	By verifyLoginpage = By.xpath("//h1[text()='Welcome, Please Sign In!']");
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -45,6 +47,10 @@ public class LoginPage1 {
 
 	public void Loginbutton() {
 		driver.findElement(LoginButton).click();
+	}
+
+	public String verifyLoginPage() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(verifyLoginpage)).getText();
 	}
 
 }

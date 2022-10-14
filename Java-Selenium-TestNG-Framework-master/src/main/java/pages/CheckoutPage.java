@@ -28,7 +28,7 @@ public class CheckoutPage {
  //Shipping Address field
 	
  By ShippingAddressField=By.xpath("(//div[@class='step-title'])[2]");
- By ShippingAddress=By.id("shipping-address-select");
+ By ShippingAddress=By.xpath("//select[@id='shipping-address-select']");
  By NewShippingAddress=By.xpath("(//option[text()='New Address'])[2]");
  By CountryIdInShipping=By.id("ShippingNewAddress_CountryId");
  By CountryNameInShipping=By.xpath("(//option[text()='India'])[2]");
@@ -152,7 +152,7 @@ public class CheckoutPage {
   WebElement shippingAddress=driver.findElement(ShippingAddress);
   Select newAddress=new Select(shippingAddress);
   newAddress.selectByVisibleText("New Address");
-  //driver.findElement(NewAddress).click();
+ // driver.findElement(NewAddress).click();
  } 
 	
   public void CountryDropDownInShippingAddress() {
@@ -188,15 +188,7 @@ public class CheckoutPage {
 
   }
 
-	
-  
- public boolean Radiobuttons_isdisplayed() {
-  wait.until(ExpectedConditions.visibilityOfElementLocated(CashonDelivery_RadioButton)).isDisplayed();
- wait.until(ExpectedConditions.visibilityOfElementLocated(CheckMoney_OrderRadioButton)).isDisplayed();
-  wait.until(ExpectedConditions.visibilityOfElementLocated(Creditcard_RadioButton)).isDisplayed();
-    wait.until(ExpectedConditions.visibilityOfElementLocated(PurchaseOrder_RadioButton)).isDisplayed();
-    return true;
- }
+
 }
 // }
 

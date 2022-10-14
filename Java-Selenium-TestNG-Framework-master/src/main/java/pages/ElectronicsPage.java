@@ -24,6 +24,7 @@ public class ElectronicsPage {
 	By PostalCode = By.id("ZipPostalCode");
 	By TermsAndServicesCheckbox = By.id("termsofservice");
 	By CheckoutButton = By.id("checkout");
+	By popupmsg = By.xpath("//p[contains(text(),'The product has been added to your')]");
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -73,6 +74,11 @@ public class ElectronicsPage {
 		driver.findElement(SmartPhonesAddtoCartbutton).click();
 	}
 
+	public boolean popupMsg() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(popupmsg)).isDisplayed();
+		//driver.findElement(popupmsg).getAttribute("The product has been added to your shopping cart");
+	}
+
 	public void ShoppingcartLink() {
 		driver.findElement(ShoppingCartLink).click();
 
@@ -96,6 +102,9 @@ public class ElectronicsPage {
 
 	public void CheckoutButton() {
 		driver.findElement(CheckoutButton).click();
+	}
+	public void billingAddrressTextField() {
+	
 	}
 
 }
