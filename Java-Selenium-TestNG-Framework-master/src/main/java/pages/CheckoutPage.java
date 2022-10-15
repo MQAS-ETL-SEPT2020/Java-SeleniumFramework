@@ -53,7 +53,7 @@ public class CheckoutPage {
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 	By PaymentInformationField = By.xpath("//h2[text()='Payment information']");
-	By BackButtonPaymentInformation = By.xpath("((//a[text()='Back'])[2]");
+	By BackButtonPaymentInformation = By.xpath("(//a[text()='Back'])[2]");
 	By ContinueInPaymentInformation = By.xpath("//input[@class='button-1 payment-info-next-step-button']");
 
 	WebDriver driver;
@@ -230,21 +230,21 @@ public class CheckoutPage {
 
 //<<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>
 
-//	public boolean isPaymentInformationDisplayed() {
-//		return wait.until(ExpectedConditions.visibilityOfElementLocated(PaymentInformationField)).isDisplayed();
-//	}
-//
-//	public boolean isContinueButtonDisplayedInPaymentInformation() {
-//		return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInPaymentInformation)).isDisplayed();
-//	}
-//
-//	public boolean isBackButtonDisplayedInPaymentInformation() {
-//		return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonPaymentInformation)).isDisplayed();
-//	}
-//
-//	public void ClickOnContinueInPaymentInformation() {
-//		driver.findElement(ContinueInPaymentInformation).click();
-//	}
+	public boolean isPaymentInformationDisplayed() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(PaymentInformationField)).isDisplayed();
+	}
+
+	public boolean isContinueButtonDisplayedInPaymentInformation() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInPaymentInformation)).isDisplayed();
+	}
+
+	public boolean isBackButtonDisplayedInPaymentInformation() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonPaymentInformation)).isDisplayed();
+	}
+
+	public void ClickOnContinueInPaymentInformation() {
+		driver.findElement(ContinueInPaymentInformation).click();
+	}
 }
 
 // }

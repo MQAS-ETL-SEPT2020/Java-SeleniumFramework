@@ -104,25 +104,47 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 
 		checkout.BillingDropdown();
 		Reporter.log("Selecting New Address", true);
-		
-		Reporter.log("Selecting Country as India ", true);
-		Assert.assertTrue(checkout.SelectNewAddress(), "Not selecting Country as India");
 
-		checkout.EnterCityName("Bengaluru");
+		checkout.CountryDropdownInBilling();
+		Reporter.log("Selecting Country as India ", true);
+		Assert.assertTrue(checkout.SelectNewAddressInBilling(), "Not selecting Country as India");
+
+		checkout.EnterCityNameInBilling("Bengaluru");
 		Reporter.log("Entering cityname in City textfield", true);
 
-		checkout.EnterAddress1("Katreguppe,Banashankari");
+		checkout.EnterAddress1InBilling("Katreguppe,Banashankari");
 		Reporter.log("Entering address in Address1 textfield", true);
 
-		checkout.EnterZipCode("560085");
+		checkout.EnterZipCodeInBilling("560085");
 		Reporter.log("Entering zipcode in Zip textfield", true);
 
-		checkout.EnterMobileNumber("9874563210");
+		checkout.EnterMobileNumberInBilling("9874563210");
 		Reporter.log("Entering phone number in Phone number textfield", true);
 
 		checkout.ClickOnContinueInBillingAddress();
 		Reporter.log("Clicking on Continue button in Billing Address");
+
+		Assert.assertTrue(checkout.isPaymentMethodDisplayed(), "Payment Method is displayed");
+		Assert.assertTrue(checkout.isBackButtonDisplayedInPaymentMethod(),
+				"Back button is displayed in Payment Method");
+		Assert.assertTrue(checkout.isContinueButtonDisplayedInPaymentMethod(),
+				"Continue button is displayed in Payment Method");
+
+		checkout.ClickOnCashOnDelivery();
+		Reporter.log("Clicking on Cash On Delivery radio button");
+
+		checkout.ClickOnContinueInPaymentMethod();
+		Reporter.log("Clicking on Continue button in Payment Method");
+
+		Assert.assertTrue(checkout.isPaymentInformationDisplayed(), "Payment Information is displayed");
+		Assert.assertTrue(checkout.isBackButtonDisplayedInPaymentInformation(),
+				"Back button is displayed in Payment Information");
+		Assert.assertTrue(checkout.isContinueButtonDisplayedInPaymentInformation(),
+				"Continue button is displayed in Payment Information");
 		
+		checkout.ClickOnContinueInPaymentInformation();
+		Reporter.log("Clicking on Continue button in Payment Information");
+
 
 	}
 }
