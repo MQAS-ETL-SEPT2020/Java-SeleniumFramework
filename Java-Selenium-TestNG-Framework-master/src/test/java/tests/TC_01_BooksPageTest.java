@@ -12,7 +12,7 @@ import pages.LoginPage1;
 public class TC_01_BooksPageTest extends BasePage {
 
 	@Test
-	public void Books() {
+	public void Books() throws InterruptedException {
 
 		LoginPage1 login = new LoginPage1(driver);
 		login.clickOnLogin();
@@ -47,8 +47,7 @@ public class TC_01_BooksPageTest extends BasePage {
 
 		books.clickonbook();
 		Reporter.log("clicking on computing and Internet book", true);
-		// Assert.assertTrue(books.computingandInternetbook(), "not clicking on
-		// computing and internet");
+	//	Assert.assertTrue(books.computingandInternetbook(), "not clicking on computing and internet");
 
 		books.price();
 		Reporter.log("price should be displayed", true);
@@ -60,12 +59,11 @@ public class TC_01_BooksPageTest extends BasePage {
 
 		books.clickonAddToCart();
 		Reporter.log("adding book to cart", true);
-		// Assert.assertTrue(books.confirmMessage(), "not adding book to cart");
+		Assert.assertTrue(books.confirmMessage(), "not adding book to cart");
 
 		books.Shoppingcart();
 		Reporter.log("clicking on shopping cart link", true);
-		// Assert.assertTrue(books.shoppingcartlink(), "not clicking on shopping cart
-		// link");
+		Assert.assertTrue(books.shoppingcartlink(), "not clicking on shopping cart link");
 
 		books.termsconditions();
 		Reporter.log("clicking on terms and conditions", true);
@@ -73,15 +71,83 @@ public class TC_01_BooksPageTest extends BasePage {
 
 		books.checkoutpage();
 		Reporter.log("clicking on checkout", true);
-		// Assert.assertTrue(books.Checkout(), "not clicking on checkout");
 
-//		CheckoutPage checkout = new CheckoutPage(driver);
-//		checkout.EnterFirstName("Tejaswini");
-//		checkout.EnterLastName("R");
-//		checkout.EnterEmailId("tejaswinirty@gmail.com");
-//		checkout.EnterCompanyName("Bengaluru");
-//		checkout.EnterAddress1("RT Nagar Post office");
-//		checkout.EnterZipCode("560032");
-//		checkout.EnterMobileNumber("9864534781");
+		Thread.sleep(2000);
+		CheckoutPage checkout = new CheckoutPage(driver);
+		Reporter.log("Billing adress page is displayed", true);
+		Assert.assertTrue(checkout.isBillingAddressDisplayed(), "billing adress is not displayed");
+		checkout.BillingDropdown();
+		checkout.EnterCityNameInBilling("Bengaluru");
+		Reporter.log("Entering city name in city textfield", true);
+		checkout.CountryDropdownInBilling();
+		checkout.EnterCompanyNameInBilling("Test Yantra");
+		Reporter.log("Entering company name in company textfield");
+		checkout.EnterAddress1InBilling("RT Nagar Post office");
+		Reporter.log("entering address in address text field");
+		checkout.EnterZipCodeInBilling("560032");
+		Reporter.log("entering zipcode in zipcode text field");
+		checkout.EnterMobileNumberInBilling("9864534781");
+		Reporter.log("entering mobile number in mobile number text field");
+		Thread.sleep(2000);
+		checkout.ClickOnContinueInBillingAddress();
+
+		Thread.sleep(5000);
+		checkout.ShippingAddressDisplayed();
+		Reporter.log("ShippingAddress is displayed", true);
+		Assert.assertTrue(checkout.ShippingAddressDisplayed(), "shipping adress not displayed");
+		checkout.shippingDropdown();
+		checkout.EnterCityNameInShippingAddress("Bengaluru");
+		Reporter.log("Entering city name in city textfield", true);
+		checkout.CountryDropDownInShippingAddress();
+		checkout.EnterAddress1InShippingAddress("RT Nagar Post office");
+		Reporter.log("entering address in address text field");
+		checkout.EnterZipCodeInShippingAddress("560032");
+		Reporter.log("entering zipcode in zipcode text field");
+		checkout.EnterMobileNumberInShippingAddress("9864534781");
+		Reporter.log("entering mobile number in mobile number text field");
+		checkout.ClickOnContinueInShippingAddress();
+		Thread.sleep(5000);
+
+		Reporter.log("Shipping method is displayed", true);
+		Assert.assertTrue(checkout.clickShippingMethodContinue(), "shipping method is not displayed");
+		checkout.selectground();
+		checkout.shippingMethodContinue();
+
+		Assert.assertTrue(checkout.isPaymentMethodDisplayed(), "Payment Method is displayed");
+		Assert.assertTrue(checkout.isContinueButtonDisplayedInPaymentMethod(),
+				"Continue button is displayed in Payment Method");
+		checkout.ClickOnCheckMoneyOrder();
+		Reporter.log("Clicking on CheckMoney Order  radio button", true);
+		checkout.ClickOnContinueInPaymentMethod();
+		Reporter.log("Clicking on Continue button in Payment Method", true);
+
+		Assert.assertTrue(checkout.isPaymentInformationDisplayed(), "Payment Information is displayed");
+		Assert.assertTrue(checkout.isContinueButtonDisplayedInPaymentInformation(),
+				"Continue button is displayed in Payment Information");
+
+		checkout.ClickOnContinueInPaymentInformation();
+		Reporter.log("Clicking on Continue button in Payment Information", true);
+
+		Assert.assertTrue(checkout.isConfirmOrderDisplayed(), " Confirm Order is displayed");
+		// Assert.assertTrue(checkout.isBackButtonDisplayedInConfirmOrder(), "Back
+		// button is displayed in Confirm Order");
+		Assert.assertTrue(checkout.isConfirmButtonDisplayedInConfirmOrder(),
+				"Continue button is displayed in Confirm Order");
+
+		checkout.ClickOnConfirmInConfirmOrder();
+		Reporter.log("Clicking on Confirm button in Confirm Order", true);
+
+		Assert.assertTrue(checkout.isThankYouPageDisplayed(), " Thank You Page is displayed");
+		Assert.assertTrue(checkout.isConfirmationMessageDisplayedInThankYouPage(),
+				"Confirmation Message is displayed in Confirm Order");
+		Assert.assertTrue(checkout.isOrderNumberDisplayedInThankYouPage(),
+				"Continue button is displayed in Confirm Order");
+		Assert.assertTrue(checkout.isContinueButtonDisplayedInThankYouPage(),
+				"Continue button is displayed in Payment Information");
+
+		checkout.ClickOnContinueInThankYouPage();
+		Reporter.log("Clicking on Confirm button in Confirm Order", true);
+
+		Assert.assertTrue(checkout.isHomePageDisplayed(), "Home Page is displayed");
 	}
 }
