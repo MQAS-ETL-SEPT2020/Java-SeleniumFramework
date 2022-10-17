@@ -20,7 +20,7 @@ public class ApparelAndShoesPage extends BasePage {
 	By eight_option = By.xpath("//option[text()='8']");
 	By viewAs_dropdown = By.xpath("//select[@id='products-viewmode']");
 	By grid_option = By.id("products-viewmode");
-	By product = By.xpath("(//img[@title=\"Show details for 50's Rockabilly Polka Dot Top JR Plus Size\"])[2]");
+	By product = By.xpath("//img[@src='https://demowebshop.tricentis.com/content/images/thumbs/0000018_50s-rockabilly-polka-dot-top-jr-plus-size_125.jpg']");
 	By size_dropdown = By.xpath("//select[@id='product_attribute_5_7_1']");
 	By small_option = By.xpath("//option[@value=\"1\"] ");
 	By price = By.xpath("//span[@itemprop='price']");
