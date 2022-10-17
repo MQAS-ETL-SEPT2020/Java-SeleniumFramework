@@ -39,6 +39,13 @@ public class CheckoutPage {
 	By ZipPostalCodeInShipping = By.id("ShippingNewAddress_ZipPostalCode");
 	By PhoneNumberInShipping = By.xpath("//input[@name='ShippingNewAddress.PhoneNumber']");
 	By ContinueInShipping = By.xpath("(//input[@title='Continue'])[2]");
+	
+	//<<shipping Method>>
+	
+	By shippingMethod=By.xpath("(//div[@class='step-title'])[3]");
+	By ground=By.xpath("//label[@for='shippingoption_0']");
+	By shippingMethodContinue=By.xpath("//input[@onclick='ShippingMethod.save()']");
+	 
 
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Method Field>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -194,6 +201,27 @@ public class CheckoutPage {
 		driver.findElement(ContinueInShipping).click();
 
 	}
+	
+	 //<<shipping Method>>
+	  public void shippingMethod() {
+			 driver.findElement(shippingMethod);
+		 }
+		 public boolean selectShippingMethod() {
+			 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingMethod)).isDisplayed();
+		 }
+		 public void ground() {
+			 driver.findElement(ground);
+		 }
+		 public boolean selectground(){
+			 return wait.until(ExpectedConditions.visibilityOfElementLocated(ground)).isDisplayed();
+		 }
+		 public void shippingMethodContinue() {
+			 driver.findElement(shippingMethodContinue).click();
+		 }
+		 public boolean clickShippingMethodContinue() {
+			 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingMethodContinue)).isDisplayed();
+		 }
+
 
 //<<<<<<<<<<<<<<<<<<<<<<<Payment method>>>>>>>>>>>>>>>>>>>>>>>	
 	public boolean isPaymentMethodDisplayed() {
