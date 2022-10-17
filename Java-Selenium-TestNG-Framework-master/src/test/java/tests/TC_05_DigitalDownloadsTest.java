@@ -122,7 +122,7 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 		Reporter.log("Entering phone number in Phone number textfield", true);
 
 		checkout.ClickOnContinueInBillingAddress();
-		Reporter.log("Clicking on Continue button in Billing Address");
+		Reporter.log("Clicking on Continue button in Billing Address",true);
 
 		Assert.assertTrue(checkout.isPaymentMethodDisplayed(), "Payment Method is displayed");
 		Assert.assertTrue(checkout.isBackButtonDisplayedInPaymentMethod(),
@@ -130,31 +130,28 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 		Assert.assertTrue(checkout.isContinueButtonDisplayedInPaymentMethod(),
 				"Continue button is displayed in Payment Method");
 
-		checkout.ClickOnCashOnDelivery();
-		Reporter.log("Clicking on Cash On Delivery radio button");
+		checkout.ClickOnCheckMoneyOrder();
+		Reporter.log("Clicking on CheckMoney Order  radio button",true);
 
 		checkout.ClickOnContinueInPaymentMethod();
-		Reporter.log("Clicking on Continue button in Payment Method");
+		Reporter.log("Clicking on Continue button in Payment Method",true);
 
 		Assert.assertTrue(checkout.isPaymentInformationDisplayed(), "Payment Information is displayed");
 		Assert.assertTrue(checkout.isBackButtonDisplayedInPaymentInformation(),
 				"Back button is displayed in Payment Information");
 		Assert.assertTrue(checkout.isContinueButtonDisplayedInPaymentInformation(),
 				"Continue button is displayed in Payment Information");
-		
+
 		checkout.ClickOnContinueInPaymentInformation();
-		Reporter.log("Clicking on Continue button in Payment Information");
+		Reporter.log("Clicking on Continue button in Payment Information",true);
 
 		Assert.assertTrue(checkout.isConfirmOrderDisplayed(), " Confirm Order is displayed");
-		Assert.assertTrue(checkout.isBackButtonDisplayedInConfirmOrder(),
-				"Back button is displayed in Confirm Order");
+		Assert.assertTrue(checkout.isBackButtonDisplayedInConfirmOrder(), "Back button is displayed in Confirm Order");
 		Assert.assertTrue(checkout.isConfirmButtonDisplayedInConfirmOrder(),
 				"Continue button is displayed in Confirm Order");
-		
-		checkout.ClickOnConfirmInConfirmOrder();
-		Reporter.log("Clicking on Confirm button in Confirm Order");
 
-		
+		checkout.ClickOnConfirmInConfirmOrder();
+		Reporter.log("Clicking on Confirm button in Confirm Order",true);
 
 	}
 }
