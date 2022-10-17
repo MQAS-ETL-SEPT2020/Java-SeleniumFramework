@@ -22,9 +22,21 @@ public class VirtualGiftcard_ProductPage extends BasePage {
     By Iagree_Checkbox=By.id("termsofservice");
     By Checkout=By.xpath("//button[@id='checkout']");
     
-
-
-
+//Methods for checkout page
+    By CashonDelivery=By.xpath("//label[text()='Cash On Delivery (COD) (7.00)']");
+    By CheckMoney_OrderRadioButton=By.xpath("//label[text()='Check / Money Order (5.00)']");
+    By Creditcard_RadioButton=By.xpath("//label[text()='Credit Card']");
+    By PurchaseOrder_RadioButton=By.xpath("//label[text()='Purchase Order']");
+    By Back_Button=By.xpath("(//a[text()='Back'])[1]");
+    By Continue_Button=By.xpath("//input[@class='button-1 payment-method-next-step-button']");
+    By Continue_Button2=By.xpath("//input[@class='button-1 payment-info-next-step-button']") ;                                         
+    By Cod_Text=By.xpath("//p[text()='You will pay by COD']");
+    By BillingAddress_Text=By.xpath("//strong[text()='Billing Address']");
+    By Paymentmethod_text=By.xpath("//strong[text()='Payment Method']");
+    By Confirm_Button=By.xpath("//input[@class='button-1 confirm-order-next-step-button']");
+    By ConfirmationOrder_Text=By.xpath("//strong[text()='Your order has been successfully processed!']");
+    By OrderNumber_Text=By.xpath("//li[contains(.,'Order number')]");
+    
 	WebDriver driver;
 	WebDriverWait wait;
 
@@ -112,5 +124,55 @@ public class VirtualGiftcard_ProductPage extends BasePage {
     	driver.findElement(Checkout).click();
     }
     
+    //Method of Checkoutpage
+    public boolean CashonDeliveryisDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(CashonDelivery)).isDisplayed();
+    }
     
+    public boolean CheckMoneyOrder_RadioButtonisDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(CheckMoney_OrderRadioButton)).isDisplayed();
+    }
+    
+    public boolean Creditcard_RadioButtonisDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(Creditcard_RadioButton)).isDisplayed();
+    }
+    
+    public boolean PurchaseOrder_RadioButtonisDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(PurchaseOrder_RadioButton)).isDisplayed();
+    }
+    
+    public boolean Back_ButtonisDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(Back_Button)).isDisplayed();
+    }
+    
+    public void Click_ContinueButton() {
+    	driver.findElement(Continue_Button).click();
+    }
+    
+    public boolean CodTextIsDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(Cod_Text)).isDisplayed();
+    }
+    
+    public void ClickContinueButton2() {
+    	driver.findElement(Continue_Button2).click();
+    }
+    
+    public boolean BillingAddress_isDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(BillingAddress_Text)).isDisplayed();
+    }
+    public boolean Paymentmethodtext_isDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(Paymentmethod_text)).isDisplayed();
+    }
+    
+    public void ClickConfirm_Button() {
+    	driver.findElement(Confirm_Button).click();
+    }
+    
+    public boolean ConfirmationOrder_TextisDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(ConfirmationOrder_Text)).isDisplayed();
+    }
+    
+    public boolean OrderNumber_TextisDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOfElementLocated(OrderNumber_Text)).isDisplayed();
+    }
 }
