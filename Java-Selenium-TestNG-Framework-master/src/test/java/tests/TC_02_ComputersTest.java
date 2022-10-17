@@ -163,16 +163,16 @@ public class TC_02_ComputersTest extends BasePage {
 		checkout.isPaymentMethodDisplayed();
 		Reporter.log("Payment Method page is displayed successfully ", true);
 		Assert.assertTrue(checkout.isPaymentMethodDisplayed(), "Payment Method page is not displayed successfully ");
-		
+
 //		checkout.isBackButtonDisplayedInPaymentMethod();
 //		Reporter.log("Back Button In Payment Method is displayed successfully ", true);
 //		Assert.assertTrue(checkout.isBackButtonDisplayedInPaymentMethod(), "Back Button In Payment Method is not displayed successfully ");
-		
+
 		checkout.isContinueButtonDisplayedInPaymentMethod();
 		Reporter.log("Continue Button is Displayed In Payment Method ", true);
 		Assert.assertTrue(checkout.isContinueButtonDisplayedInPaymentMethod(),
 				"Continue Button is not displayed In Payment Method ");
-		
+
 		checkout.ClickOnCheckMoneyOrder();
 		checkout.ClickOnContinueInPaymentMethod();
 
@@ -180,11 +180,10 @@ public class TC_02_ComputersTest extends BasePage {
 		Reporter.log("Payment information page is displayed successfully ", true);
 		Assert.assertTrue(checkout.isPaymentInformationDisplayed(),
 				"Payment information page is not displayed successfully ");
-		
+
 //		checkout.isBackButtonDisplayedInPaymentInformation();
 //		Reporter.log("Back Button In Payment Information is displayed successfully ", true);
 //		Assert.assertTrue(checkout.isBackButtonDisplayedInPaymentInformation(), "Back Button In Payment Information is not displayed successfully ");
-
 
 		checkout.isContinueButtonDisplayedInPaymentInformation();
 		Reporter.log("Continue button in payment information page is displayed successfully ", true);
@@ -208,6 +207,19 @@ public class TC_02_ComputersTest extends BasePage {
 				"Confirm button is not displayed successfully ");
 
 		checkout.ClickOnConfirmInConfirmOrder();
+		Reporter.log("Clicking on Confirm button in Confirm Order", true);
 
+		Assert.assertTrue(checkout.isThankYouPageDisplayed(), " Thank You Page is displayed");
+		Assert.assertTrue(checkout.isConfirmationMessageDisplayedInThankYouPage(),
+				"Confirmation Message is displayed in Confirm Order");
+		Assert.assertTrue(checkout.isOrderNumberDisplayedInThankYouPage(),
+				"Continue button is displayed in Confirm Order");
+		Assert.assertTrue(checkout.isContinueButtonDisplayedInThankYouPage(),
+				"Continue button is displayed in Payment Information");
+
+		checkout.ClickOnContinueInThankYouPage();
+		Reporter.log("Clicking on Confirm button in Confirm Order", true);
+
+		Assert.assertTrue(checkout.isHomePageDisplayed(), "Home Page is displayed");
 	}
 }
