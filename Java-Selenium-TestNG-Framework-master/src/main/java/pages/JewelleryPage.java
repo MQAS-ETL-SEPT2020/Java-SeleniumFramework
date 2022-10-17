@@ -18,8 +18,8 @@ public class JewelleryPage
 	By sortbyText=By.xpath("//option[text()='Position']");
 	By DisplayText=By.xpath("//option[text()='8']");
 	By ViewasText=By.xpath("//option[text()='Grid']");
-    By Productimage=By.xpath("(//a[text()='Black & White Diamond Heart'])[2]");
-	//By Productimage=By.xpath("//a[text()='Diamond Tennis Bracelet']");
+    //By Productimage=By.xpath("(//a[text()='Black & White Diamond Heart'])[2]");
+	By Productimage=By.xpath("//img[@title='Show details for Black & White Diamond Heart']");
 	WebDriver driver;
 	WebDriverWait wait;
    
