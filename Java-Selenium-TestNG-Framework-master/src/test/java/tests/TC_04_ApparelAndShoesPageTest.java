@@ -147,6 +147,8 @@ import pages.LoginPage1;
 			Assert.assertTrue(apparelAndShoes.clickShippingMethodContinue(),"not clicked on continue");
 			Thread.sleep(2000);
 			
+			address.ClickOnContinueInPaymentMethod();
+			
 			
 			
 //			apparelAndShoes.billingAddress();

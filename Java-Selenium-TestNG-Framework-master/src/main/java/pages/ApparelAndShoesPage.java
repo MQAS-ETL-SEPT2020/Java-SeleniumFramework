@@ -189,9 +189,10 @@ public class ApparelAndShoesPage extends BasePage {
 	 public boolean clickShippingMethodContinue() {
 		 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingMethodContinue)).isDisplayed();
 	 }
-//	 public void paymentMethod() {
+	 
+	 public void paymentMethod() {
 //		 driver.findElement(paymentMethod);
-//	 }
+	 }
 //	 public boolean selectPaymentMethod() {
 //		 return wait.until(ExpectedConditions.visibilityOfElementLocated(paymentMethod)).isDisplayed();
 //	 }
