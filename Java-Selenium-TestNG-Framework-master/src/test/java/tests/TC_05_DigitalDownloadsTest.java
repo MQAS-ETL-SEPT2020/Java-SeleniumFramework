@@ -153,5 +153,16 @@ public class TC_05_DigitalDownloadsTest extends BasePage {
 		checkout.ClickOnConfirmInConfirmOrder();
 		Reporter.log("Clicking on Confirm button in Confirm Order",true);
 
+		Assert.assertTrue(checkout.isThankYouPageDisplayed(), " Thank You Page is displayed");
+		Assert.assertTrue(checkout.isConfirmationMessageDisplayedInThankYouPage(), "Confirmation Message is displayed in Confirm Order");
+		Assert.assertTrue(checkout.isOrderNumberDisplayedInThankYouPage(),
+				"Continue button is displayed in Confirm Order");
+		Assert.assertTrue(checkout.isContinueButtonDisplayedInThankYouPage(),
+				"Continue button is displayed in Payment Information");
+
+		checkout.ClickOnContinueInThankYouPage();
+		Reporter.log("Clicking on Confirm button in Confirm Order",true);
+
+		Assert.assertTrue(checkout.isHomePageDisplayed(), "Home Page is displayed");
 	}
 }
