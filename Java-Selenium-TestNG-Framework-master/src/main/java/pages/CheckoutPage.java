@@ -46,23 +46,27 @@ public class CheckoutPage {
 	By ground=By.xpath("//label[@for='shippingoption_0']");
 	By shippingMethodContinue=By.xpath("//input[@onclick='ShippingMethod.save()']");
 	 
-
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Method Field>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-	By PaymentMethodField = By.xpath("//h2[text()='Payment method']");
-	By CashOnDelivery = By.xpath("//label[text()='Cash On Delivery (COD) (7.00)']");
-	By CheckMoneyOrder = By.xpath("//label[text()='Check / Money Order (5.00)']");
-	By CreditCard = By.xpath("//label[text()='Credit Card']");
-	By PurchaseOrder = By.xpath("//label[text()='Purchase Order']");
-	By BackButtonInPaymentMethod = By.xpath("(//a[text()='Back'])[1]");
-	By ContinueInPaymentMethod = By.xpath("//input[@class='button-1 payment-method-next-step-button']");
+		By PaymentMethodField = By.xpath("//h2[text()='Payment method']");
+		By CashOnDelivery = By.xpath("//label[text()='Cash On Delivery (COD) (7.00)']");
+		By CheckMoneyOrder = By.xpath("//label[text()='Check / Money Order (5.00)']");
+		By CreditCard = By.xpath("//label[text()='Credit Card']");
+		By PurchaseOrder = By.xpath("//label[text()='Purchase Order']");
+		By BackButtonInPaymentMethod = By.xpath("(//a[text()='Back'])[1]");
+		By ContinueInPaymentMethod = By.xpath("//input[@class='button-1 payment-method-next-step-button']");
 
-	// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>>>
+		// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-	By PaymentInformationField = By.xpath("//h2[text()='Payment information']");
-	By BackButtonPaymentInformation = By.xpath("(//a[text()='Back'])[2]");
-	By ContinueInPaymentInformation = By.xpath("//input[@class='button-1 payment-info-next-step-button']");
+		By PaymentInformationField = By.xpath("//h2[text()='Payment information']");
+		By BackButtonInPaymentInformation = By.xpath("(//a[text()='Back'])[2]");
+		By ContinueInPaymentInformation = By.xpath("//input[@class='button-1 payment-info-next-step-button']");
 
+		// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Confirm Order>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+		By ConfirmOrderField = By.xpath("//h2[text()='Confirm order']");
+		By BackButtonInConfirmationOrder = By.xpath("(//a[text()='Back'])[3]");
+		By ConfirmInConfirmationOrder = By.xpath("//input[@class='button-1 confirm-order-next-step-button']");
 	WebDriver driver;
 	WebDriverWait wait;
 
@@ -223,56 +227,73 @@ public class CheckoutPage {
 		 }
 
 
-//<<<<<<<<<<<<<<<<<<<<<<<Payment method>>>>>>>>>>>>>>>>>>>>>>>	
-	public boolean isPaymentMethodDisplayed() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(PaymentMethodField)).isDisplayed();
-	}
 
-	public boolean isContinueButtonDisplayedInPaymentMethod() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInPaymentMethod)).isDisplayed();
-	}
+		//<<<<<<<<<<<<<<<<<<<<<<<Payment method>>>>>>>>>>>>>>>>>>>>>>>	
+			public boolean isPaymentMethodDisplayed() {
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(PaymentMethodField)).isDisplayed();
+			}
 
-	public boolean isBackButtonDisplayedInPaymentMethod() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonInPaymentMethod)).isDisplayed();
-	}
+			public boolean isContinueButtonDisplayedInPaymentMethod() {
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInPaymentMethod)).isDisplayed();
+			}
 
-	public void ClickOnCashOnDelivery() {
-		driver.findElement(CashOnDelivery).click();
-	}
+			public boolean isBackButtonDisplayedInPaymentMethod() {
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonInPaymentMethod)).isDisplayed();
+			}
 
-	public void ClickOnCheckMoneyOrder() {
-		driver.findElement(CheckMoneyOrder).click();
-	}
+			public void ClickOnCashOnDelivery() {
+				driver.findElement(CashOnDelivery).click();
+			}
 
-	public void ClickOnCreditCard() {
-		driver.findElement(CreditCard).click();
-	}
+			public void ClickOnCheckMoneyOrder() {
+				driver.findElement(CheckMoneyOrder).click();
+			}
 
-	public void ClickOnPurchaseOrder() {
-		driver.findElement(PurchaseOrder).click();
-	}
+			public void ClickOnCreditCard() {
+				driver.findElement(CreditCard).click();
+			}
 
-	public void ClickOnContinueInPaymentMethod() {
-		driver.findElement(ContinueInPaymentMethod).click();
-	}
+			public void ClickOnPurchaseOrder() {
+				driver.findElement(PurchaseOrder).click();
+			}
 
-//<<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>
+			public void ClickOnContinueInPaymentMethod() {
+				driver.findElement(ContinueInPaymentMethod).click();
+			}
 
-	public boolean isPaymentInformationDisplayed() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(PaymentInformationField)).isDisplayed();
-	}
+		//<<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>
 
-	public boolean isContinueButtonDisplayedInPaymentInformation() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInPaymentInformation)).isDisplayed();
-	}
+			public boolean isPaymentInformationDisplayed() {
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(PaymentInformationField)).isDisplayed();
+			}
 
-	public boolean isBackButtonDisplayedInPaymentInformation() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonPaymentInformation)).isDisplayed();
-	}
+			public boolean isContinueButtonDisplayedInPaymentInformation() {
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInPaymentInformation)).isDisplayed();
+			}
 
-	public void ClickOnContinueInPaymentInformation() {
-		driver.findElement(ContinueInPaymentInformation).click();
-	}
+			public boolean isBackButtonDisplayedInPaymentInformation() {
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonInPaymentInformation)).isDisplayed();
+			}
+
+			public void ClickOnContinueInPaymentInformation() {
+				driver.findElement(ContinueInPaymentInformation).click();
+			}
+		//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Confirm Order>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
+			public boolean isConfirmOrderDisplayed() {
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(ConfirmOrderField)).isDisplayed();
+			}
+
+			public boolean isConfirmButtonDisplayedInConfirmOrder() {
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(ConfirmInConfirmationOrder)).isDisplayed();
+			}
+
+			public boolean isBackButtonDisplayedInConfirmOrder() {
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonInConfirmationOrder)).isDisplayed();
+			}
+
+			public void ClickOnConfirmInConfirmOrder() {
+				driver.findElement(ConfirmInConfirmationOrder).click();
+			}
 }
 
 // }
