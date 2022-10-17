@@ -23,16 +23,15 @@ public class ComputersPage {
 	By HDD = By.xpath("//label[text()='320 GB ']");
 	By software = By.xpath("//label[text()='Image Viewer  [+5.00]']");
 	By Quality = By.id("addtocart_74_EnteredQuantity");
-	By AddtocartText = By.xpath("(//div[@class='buttons'])[5]");
+	By AddtocartText = By.xpath("(//div[@class='buttons'])[4]");
 	By BuildText = By.xpath("//h1[@itemprop='name']");
 	By SoftwareText = By.xpath("(//label[@class='text-prompt'])[4]");
-	By Cart = By.id("(//input[@type='button'])[3]");
+	By Cart = By.xpath("//input[@id='add-to-cart-button-74']");
 	By cartText = By.xpath("(//input[@type='button'])[3]");
 	By AddedToCartPopUp = By.id("bar-notification");
 	By shopping = By.xpath("(//a[@class='ico-cart'])[1]");
 	By ShoppingCartText = By.xpath("(//span[@class='cart-label'])[1]");
-	By Quality1 = By.xpath("//input[@name='itemquantity2742731']");
-	By ProductImage = By.xpath("//td[@class='product-picture']");
+	
 	By amount = By.xpath("//span[@class='product-subtotal']");
 	By country = By.id("CountryId");
 	By zipCode = By.id("ZipPostalCode");
@@ -132,7 +131,7 @@ public class ComputersPage {
 	}
 
 	public void CartButton() {
-		driver.findElement(Addtocart).click();
+		driver.findElement(Cart).click();
 	}
 
 	public boolean CartText() {
@@ -153,14 +152,6 @@ public class ComputersPage {
 
 	public boolean shoppingText() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(ShoppingCartText)).isDisplayed();
-	}
-
-	public boolean DefaultQuality() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(Quality1)).isDisplayed();
-	}
-
-	public boolean productimage() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(ProductImage)).isDisplayed();
 	}
 
 	public boolean defaultAmount() {

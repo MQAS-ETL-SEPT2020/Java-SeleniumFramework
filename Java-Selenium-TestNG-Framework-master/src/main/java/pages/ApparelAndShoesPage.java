@@ -48,6 +48,39 @@ public class ApparelAndShoesPage extends BasePage {
 	// By display = By.id("products-pagesize");
 	// By viewAs = By.id("products-viewmode");
 	// By image = By.xpath("(//div[@class='picture'])[1]");
+	
+	// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Method Field>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+		By PaymentMethodField = By.xpath("//h2[text()='Payment method']");
+		By CashOnDelivery = By.xpath("//label[text()='Cash On Delivery (COD) (7.00)']");
+		By CheckMoneyOrder = By.xpath("//label[text()='Check / Money Order (5.00)']");
+		By CreditCard = By.xpath("//label[text()='Credit Card']");
+		By PurchaseOrder = By.xpath("//label[text()='Purchase Order']");
+		By BackButtonInPaymentMethod = By.xpath("(//a[text()='Back'])[1]");
+		By ContinueInPaymentMethod = By.xpath("//input[@class='button-1 payment-method-next-step-button']");
+
+		// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+		By PaymentInformationField = By.xpath("//h2[text()='Payment information']");
+		By BackButtonInPaymentInformation = By.xpath("(//a[text()='Back'])[2]");
+		By ContinueInPaymentInformation = By.xpath("//input[@class='button-1 payment-info-next-step-button']");
+
+		// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Confirm Order>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+		By ConfirmOrderField = By.xpath("//h2[text()='Confirm order']");
+		By BackButtonInConfirmationOrder = By.xpath("(//a[text()='Back'])[3]");
+		By ConfirmInConfirmationOrder = By.xpath("//input[@class='button-1 confirm-order-next-step-button']");
+
+		// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Thank You
+		// page>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+		By ThankYouPage = By.xpath("//h1[text()='Thank you']");
+		By ConfirmationMessage = By.xpath("//strong[text()='Your order has been successfully processed!']");
+		By OrderNumber = By.xpath("//ul[@class='details']/li[1]");
+		By ContinueInThankYouPage = By.xpath("//input[@class='button-2 order-completed-continue-button']");
+		By ApplicationHomePage = By.xpath("//img[@alt='Tricentis Demo Web Shop']");
+	
+	
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -193,6 +226,105 @@ public class ApparelAndShoesPage extends BasePage {
 	 public void paymentMethod() {
 //		 driver.findElement(paymentMethod);
 	 }
+	 
+	// <<<<<<<<<<<<<<<<<<<<<<<Payment method>>>>>>>>>>>>>>>>>>>>>>>
+
+		public boolean isPaymentMethodDisplayed() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(PaymentMethodField)).isDisplayed();
+		}
+
+		public boolean isContinueButtonDisplayedInPaymentMethod() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInPaymentMethod)).isDisplayed();
+		}
+
+		public boolean isBackButtonDisplayedInPaymentMethod() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonInPaymentMethod)).isDisplayed();
+		}
+
+		public void ClickOnCashOnDelivery() {
+			driver.findElement(CashOnDelivery).click();
+		}
+
+		public void ClickOnCheckMoneyOrder() {
+			driver.findElement(CheckMoneyOrder).click();
+		}
+
+		public void ClickOnCreditCard() {
+			driver.findElement(CreditCard).click();
+		}
+
+		public void ClickOnPurchaseOrder() {
+			driver.findElement(PurchaseOrder).click();
+		}
+
+		public void ClickOnContinueInPaymentMethod() {
+			driver.findElement(ContinueInPaymentMethod).click();
+		}
+
+		// <<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>
+
+		public boolean isPaymentInformationDisplayed() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(PaymentInformationField)).isDisplayed();
+		}
+
+		public boolean isContinueButtonDisplayedInPaymentInformation() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInPaymentInformation)).isDisplayed();
+		}
+
+		public boolean isBackButtonDisplayedInPaymentInformation() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonInPaymentInformation)).isDisplayed();
+		}
+
+		public void ClickOnContinueInPaymentInformation() {
+			driver.findElement(ContinueInPaymentInformation).click();
+		}
+
+		// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Confirm Order>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+		public boolean isConfirmOrderDisplayed() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(ConfirmOrderField)).isDisplayed();
+		}
+
+		public boolean isConfirmButtonDisplayedInConfirmOrder() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(ConfirmInConfirmationOrder)).isDisplayed();
+		}
+
+		public boolean isBackButtonDisplayedInConfirmOrder() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonInConfirmationOrder)).isDisplayed();
+		}
+
+		public void ClickOnConfirmInConfirmOrder() {
+			driver.findElement(ConfirmInConfirmationOrder).click();
+		}
+
+		// <<<<<<<<<<<<<<<<<<<<<<<<<<Thank You Page>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+		public boolean isThankYouPageDisplayed() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(ThankYouPage)).isDisplayed();
+		}
+
+		public boolean isOrderNumberDisplayedInThankYouPage() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(OrderNumber)).isDisplayed();
+		}
+
+		public boolean isConfirmationMessageDisplayedInThankYouPage() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(ConfirmationMessage)).isDisplayed();
+		}
+
+		public boolean isContinueButtonDisplayedInThankYouPage() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInThankYouPage)).isDisplayed();
+		}
+
+		public void ClickOnContinueInThankYouPage() {
+			driver.findElement(ContinueInThankYouPage).click();
+		}
+		
+		public boolean isHomePageDisplayed() {
+			return wait.until(ExpectedConditions.visibilityOfElementLocated(ApplicationHomePage)).isDisplayed();
+		}
+
+	
+
 //	 public boolean selectPaymentMethod() {
 //		 return wait.until(ExpectedConditions.visibilityOfElementLocated(paymentMethod)).isDisplayed();
 //	 }
@@ -226,5 +358,5 @@ public class ApparelAndShoesPage extends BasePage {
 //	 public boolean selectConfirmOrder() {
 //		 return wait.until(ExpectedConditions.visibilityOfElementLocated(confirmOrder)).isDisplayed();
 //	 }
-	 
+
 }

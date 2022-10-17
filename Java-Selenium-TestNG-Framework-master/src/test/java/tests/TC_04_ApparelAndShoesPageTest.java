@@ -121,7 +121,6 @@ import pages.LoginPage1;
 
 			address.CountryDropDownInShippingAddress();
 			
-			//
 			address.EnterCityNameInShippingAddress("bengalore");
 			address.EnterAddress1InShippingAddress("hjgfckytfkuy");
 			address.EnterZipCodeInShippingAddress("560085");
@@ -149,6 +148,46 @@ import pages.LoginPage1;
 			
 			address.ClickOnContinueInPaymentMethod();
 			
+			Assert.assertTrue(address.isPaymentMethodDisplayed(), "Payment Method is displayed");
+			//Assert.assertTrue(address.isBackButtonDisplayedInPaymentMethod(),
+				//	"Back button is displayed in Payment Method");
+			Assert.assertTrue(address.isContinueButtonDisplayedInPaymentMethod(),
+					"Continue button is displayed in Payment Method");
+
+			address.ClickOnCheckMoneyOrder();
+			Reporter.log("Clicking on CheckMoney Order  radio button",true);
+
+			address.ClickOnContinueInPaymentMethod();
+			Reporter.log("Clicking on Continue button in Payment Method",true);
+
+			Assert.assertTrue(address.isPaymentInformationDisplayed(), "Payment Information is displayed");
+			//Assert.assertTrue(address.isBackButtonDisplayedInPaymentInformation(),
+				//	"Back button is displayed in Payment Information");
+			Assert.assertTrue(address.isContinueButtonDisplayedInPaymentInformation(),
+					"Continue button is displayed in Payment Information");
+
+			address.ClickOnContinueInPaymentInformation();
+			Reporter.log("Clicking on Continue button in Payment Information",true);
+
+			Assert.assertTrue(address.isConfirmOrderDisplayed(), " Confirm Order is displayed");
+			//Assert.assertTrue(address.isBackButtonDisplayedInConfirmOrder(), "Back button is displayed in Confirm Order");
+			Assert.assertTrue(address.isConfirmButtonDisplayedInConfirmOrder(),
+					"Continue button is displayed in Confirm Order");
+
+			address.ClickOnConfirmInConfirmOrder();
+			Reporter.log("Clicking on Confirm button in Confirm Order",true);
+
+			Assert.assertTrue(address.isThankYouPageDisplayed(), " Thank You Page is displayed");
+			Assert.assertTrue(address.isConfirmationMessageDisplayedInThankYouPage(), "Confirmation Message is displayed in Confirm Order");
+			Assert.assertTrue(address.isOrderNumberDisplayedInThankYouPage(),
+					"Continue button is displayed in Confirm Order");
+			Assert.assertTrue(address.isContinueButtonDisplayedInThankYouPage(),
+					"Continue button is displayed in Payment Information");
+
+			address.ClickOnContinueInThankYouPage();
+			Reporter.log("Clicking on Confirm button in Confirm Order",true);
+
+			Assert.assertTrue(address.isHomePageDisplayed(), "Home Page is displayed");
 			
 			
 //			apparelAndShoes.billingAddress();
