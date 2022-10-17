@@ -67,6 +67,8 @@ public class CheckoutPage {
 		By ConfirmOrderField = By.xpath("//h2[text()='Confirm order']");
 		By BackButtonInConfirmationOrder = By.xpath("(//a[text()='Back'])[3]");
 		By ConfirmInConfirmationOrder = By.xpath("//input[@class='button-1 confirm-order-next-step-button']");
+		
+		
 	WebDriver driver;
 	WebDriverWait wait;
 
@@ -225,6 +227,7 @@ public class CheckoutPage {
 		 public boolean clickShippingMethodContinue() {
 			 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingMethodContinue)).isDisplayed();
 		 }
+
 
 
 
