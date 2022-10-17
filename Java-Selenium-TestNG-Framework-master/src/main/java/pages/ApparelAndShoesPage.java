@@ -19,8 +19,8 @@ public class ApparelAndShoesPage extends BasePage {
 	By display_dropdown = By.xpath("//select[@id='products-pagesize']");
 	By eight_option = By.xpath("//option[text()='8']");
 	By viewAs_dropdown = By.xpath("//select[@id='products-viewmode']");
-	By grid_option = By.xpath("//option[text()='Grid']");
-	By product = By.xpath("(//div[@class='picture'])[2]");
+	By grid_option = By.id("products-viewmode");
+	By product = By.xpath("(//img[@title=\"Show details for 50's Rockabilly Polka Dot Top JR Plus Size\"])[2]");
 	By size_dropdown = By.xpath("//select[@id='product_attribute_5_7_1']");
 	By small_option = By.xpath("//option[@value=\"1\"] ");
 	By price = By.xpath("//span[@itemprop='price']");
@@ -31,10 +31,20 @@ public class ApparelAndShoesPage extends BasePage {
 	By shoppingCart=By.xpath("//span[text()='Shopping cart']");
 	By termsAndConditions=By.id("termsofservice");
 	By checkOut=By.id("checkout");
-	By billingAddress=By.id("billing-address-select");
-	By clickContinue=By.xpath("(//input[@type='button'])[2]");
-	By shippingAddress=By.id("shipping-address-select");
-	By shippingContinue=By.xpath("//input[@onclick='Shipping.save()']");
+//	By billingAddress=By.id("billing-address-select");
+//	By clickContinue=By.xpath("(//input[@type='button'])[2]");
+//	By shippingAddress=By.id("shipping-address-select");
+//	By shippingContinue=By.xpath("//input[@onclick='Shipping.save()']");
+	By shippingMethod=By.xpath("(//div[@class='step-title'])[3]");
+	By ground=By.xpath("//label[@for='shippingoption_0']");
+	By shippingMethodContinue=By.xpath("//input[@onclick='ShippingMethod.save()']");
+//	By paymentMethod=By.xpath("//li[@id='opc-payment_method']");
+//	By cashOnDelivery=By.xpath("//label[text()='Cash On Delivery (COD) (7.00)']");
+//	By paymentContinue=By.xpath("//input[@onclick='PaymentMethod.save()']");
+//	By paymentInformation=By.xpath("//li[@class='tab-section allow active']");
+//	By paymentInformationContinue=By.xpath("//input[@class='button-1 payment-info-next-step-button']");
+//	By confirmOrder=By.xpath("//li[@class='tab-section allow active']");
+//	By clickConfirm=By.xpath("//input[@onclick='ConfirmOrder.save()']");
 	// By display = By.id("products-pagesize");
 	// By viewAs = By.id("products-viewmode");
 	// By image = By.xpath("(//div[@class='picture'])[1]");
@@ -74,10 +84,10 @@ public class ApparelAndShoesPage extends BasePage {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(eight_option)).isDisplayed();
 	}
 
-	public void selectViewAs() {
+	public void selectViewAs() throws InterruptedException {
 		WebElement drop2 = driver.findElement(viewAs_dropdown);
 		Select sel = new Select(drop2);
-
+		//Thread.sleep(2000);
 	}
 
 	public boolean viewgrid() {
@@ -135,30 +145,85 @@ public class ApparelAndShoesPage extends BasePage {
 	 public boolean clickOnCheckOut() {
 		 return wait.until(ExpectedConditions.visibilityOfElementLocated(checkOut)).isDisplayed();
 	 }
-	 public void billingAddress() {
-		WebElement drop4 = driver.findElement(billingAddress);
-		 Select sel = new Select(drop4);
+//	 public void billingAddress() {
+//		WebElement drop4 = driver.findElement(billingAddress);
+//		 Select sel = new Select(drop4);
+//	 }
+//	 public boolean selectbillingAddress() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(billingAddress)).isDisplayed();
+//	 }
+//	 public void continueButton() {
+//		 driver.findElement(clickContinue).click();
+//	 }
+//	 public boolean clickOnContinue() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(clickContinue)).isDisplayed();
+//	 }
+//	 public void shippingAddress() {
+//		WebElement drop5 = driver.findElement(shippingAddress);
+//		Select sel=new Select(drop5);
+//	 }
+//	 public boolean selectShippingAddress() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingAddress)).isDisplayed();
+//	 }
+//	 public void shippingContinue() {
+//		 driver.findElement(shippingContinue).click();
+//	 }
+//	 public boolean clickShippingContinue() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingContinue)).isDisplayed();
+//	 }
+	 public void shippingMethod() {
+		 driver.findElement(shippingMethod);
 	 }
-	 public boolean selectbillingAddress() {
-		 return wait.until(ExpectedConditions.visibilityOfElementLocated(billingAddress)).isDisplayed();
+	 public boolean selectShippingMethod() {
+		 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingMethod)).isDisplayed();
 	 }
-	 public void continueButton() {
-		 driver.findElement(clickContinue).click();
+	 public void ground() {
+		 driver.findElement(ground);
 	 }
-	 public boolean clickOnContinue() {
-		 return wait.until(ExpectedConditions.visibilityOfElementLocated(clickContinue)).isDisplayed();
+	 public boolean selectground(){
+		 return wait.until(ExpectedConditions.visibilityOfElementLocated(ground)).isDisplayed();
 	 }
-	 public void shippingAddress() {
-		WebElement drop5 = driver.findElement(shippingAddress);
-		Select sel=new Select(drop5);
+	 public void shippingMethodContinue() {
+		 driver.findElement(shippingMethodContinue).click();
 	 }
-	 public boolean selectShippingAddress() {
-		 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingAddress)).isDisplayed();
+	 public boolean clickShippingMethodContinue() {
+		 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingMethodContinue)).isDisplayed();
 	 }
-	 public void shippingContinue() {
-		 driver.findElement(shippingContinue).click();
-	 }
-	 public boolean clickShippingContinue() {
-		 return wait.until(ExpectedConditions.visibilityOfElementLocated(shippingContinue)).isDisplayed();
-	 }
+//	 public void paymentMethod() {
+//		 driver.findElement(paymentMethod);
+//	 }
+//	 public boolean selectPaymentMethod() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(paymentMethod)).isDisplayed();
+//	 }
+//	 public void cashOnDelivery() {
+//		 driver.findElement(cashOnDelivery).click();
+//	 }
+//	 public boolean clickCashOnDelivery() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(cashOnDelivery)).isDisplayed();
+//	 }
+//	 public void paymentContinue() {
+//		 driver.findElement(paymentContinue).click();
+//	 }
+//	 public boolean clickPaymentContinue() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(paymentContinue)).isDisplayed();
+//	 }
+//	 public void paymentInformation() {
+//		 driver.findElement(paymentInformation);
+//	 }
+//	 public boolean selectPaymentInformation() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(paymentInformation)).isDisplayed();
+//	 }
+//	 public void paymentInformationContinue() {
+//		 driver.findElement(paymentInformationContinue).click();
+//	 }
+//	 public boolean clickPaymentInformationContinue() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(paymentInformationContinue)).isDisplayed();
+//	 }
+//	 public void confirmOrder() {
+//		 driver.findElement(confirmOrder);
+//	 }
+//	 public boolean selectConfirmOrder() {
+//		 return wait.until(ExpectedConditions.visibilityOfElementLocated(confirmOrder)).isDisplayed();
+//	 }
+	 
 }

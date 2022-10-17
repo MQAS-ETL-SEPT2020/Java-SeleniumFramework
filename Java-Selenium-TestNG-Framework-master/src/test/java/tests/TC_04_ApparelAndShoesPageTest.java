@@ -133,16 +133,16 @@ import pages.LoginPage1;
 			 * true); Assert.assertTrue(apparelAndShoes.clickShippingMethodContinue()
 			 * ,"not clicked on continue"); Thread.sleep(2000);
 			 */
-			apparelAndShoes.shippingMethod();
+			address.shippingMethod();
 			Reporter.log("select shipping method", true);
 			Assert.assertTrue(apparelAndShoes.selectShippingMethod(), "shipping method is not present");
 			Thread.sleep(2000);
 			
-			apparelAndShoes.ground();
+			address.ground();
 			Reporter.log("select ground", true);
 			Assert.assertTrue(apparelAndShoes.selectground(), "ground is not checked");
 			
-			apparelAndShoes.shippingMethodContinue();
+			address.shippingMethodContinue();
 			Reporter.log("click on continue", true);
 			Assert.assertTrue(apparelAndShoes.clickShippingMethodContinue(),"not clicked on continue");
 			Thread.sleep(2000);
