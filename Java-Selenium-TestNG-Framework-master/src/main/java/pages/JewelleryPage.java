@@ -19,7 +19,7 @@ public class JewelleryPage
 	By DisplayText=By.xpath("//option[text()='8']");
 	By ViewasText=By.xpath("//option[text()='Grid']");
     //By Productimage=By.xpath("(//a[text()='Black & White Diamond Heart'])[2]");
-	By Productimage=By.xpath("//img[@title='Show details for Black & White Diamond Heart']");
+	By Productimage=By.xpath("//img[@src='https://demowebshop.tricentis.com/content/images/thumbs/0000029_black-white-diamond-heart_125.jpg']");
 	WebDriver driver;
 	WebDriverWait wait;
    

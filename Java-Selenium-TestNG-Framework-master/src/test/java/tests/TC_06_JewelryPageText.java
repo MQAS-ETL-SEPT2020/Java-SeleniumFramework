@@ -80,8 +80,8 @@ public class TC_06_JewelryPageText extends BasePage {
 		address.BillingDropdown();
 		Reporter.log("clicking on BillingAddress dropdown", true);
 
-		address.ClickOnContinueInBillingAddress();
-		Reporter.log("Entering BillingAddress dropdown", true);
+		//address.ClickOnContinueInBillingAddress();
+		//Reporter.log("Entering BillingAddress dropdown", true);
 
 		address.EnterFirstNameInBilling("Vanishree");
 		Reporter.log("Entering Firstname", true);
