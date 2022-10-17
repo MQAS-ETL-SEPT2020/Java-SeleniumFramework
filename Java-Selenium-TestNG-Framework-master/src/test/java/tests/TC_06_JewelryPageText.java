@@ -210,7 +210,7 @@ public class TC_06_JewelryPageText extends BasePage {
 		Reporter.log("Clicking on Confirm button in Confirm Order",true);
 
 		Assert.assertTrue(address.isHomePageDisplayed(), "Home Page is displayed");
-	
+		
 
 	}
 
