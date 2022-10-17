@@ -76,7 +76,8 @@ public class ElectronicsPage {
 
 	public boolean popupMsg() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(popupmsg)).isDisplayed();
-		//driver.findElement(popupmsg).getAttribute("The product has been added to your shopping cart");
+		// driver.findElement(popupmsg).getAttribute("The product has been added to your
+		// shopping cart");
 	}
 
 	public void ShoppingcartLink() {
@@ -103,8 +104,9 @@ public class ElectronicsPage {
 	public void CheckoutButton() {
 		driver.findElement(CheckoutButton).click();
 	}
+
 	public void billingAddrressTextField() {
-	
+
 	}
 
 }

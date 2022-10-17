@@ -92,7 +92,8 @@ public class TC_03_CameraPageTest extends BasePage {
 
 		CheckoutPage address = new CheckoutPage(driver);
 
-		// clicking on new address in Billing Dropdown.
+		// <<-----Billing address----->>
+
 		address.BillingDropdown();
 		Reporter.log("clicking on billing adrress dropdown", true);
 
@@ -128,6 +129,8 @@ public class TC_03_CameraPageTest extends BasePage {
 
 		Thread.sleep(5000);
 
+		// <<-----Shipping Address------>>
+
 		address.ShippingAddressDisplayed();
 		Reporter.log("verifying shippingaddress page is displayed", true);
 
@@ -135,23 +138,94 @@ public class TC_03_CameraPageTest extends BasePage {
 		Reporter.log("clicking on Shipping address dropdown", true);
 
 		address.CountryDropDownInShippingAddress();
-		
-		//
+		Reporter.log("selecting country dropdown", true);
+
 		address.EnterCityNameInShippingAddress("bengalore");
+		Reporter.log("entering the cityname", true);
+
 		address.EnterAddress1InShippingAddress("hjgfckytfkuy");
+		Reporter.log("entering address 1", true);
+
 		address.EnterZipCodeInShippingAddress("562104");
+		Reporter.log("entering zip code", true);
+
 		address.EnterMobileNumberInShippingAddress("7892540781");
+		Reporter.log("entered mobile number", true);
+
 		address.ClickOnContinueInShippingAddress();
+		Reporter.log("clicked opn continue in shopping address", true);
+
+		// <<---Shipping method--->
+
+		address.shippingMethod();
+		Reporter.log("verifying Shipping method", true);
+
+		address.selectShippingMethod();
+		Reporter.log("verifying Shipping method", true);
 
 		/*
-		 * public void shippingDropdown() {
-		 *  driver.findElement(ShippingAddress).click();
-		 * WebElement shippingAddress=driver.findElement(ShippingAddress); Select
-		 * newAddress=new Select(shippingAddress);
-		 * newAddress.selectByVisibleText("New Address");
-		 * driver.findElement(NewAddress).click();
+		 * address.ground(); Reporter.log("selecting ground radio button" , true);
 		 */
 
+		address.selectground();
+		Reporter.log("verifying Shipping method", true);
+
+		address.shippingMethodContinue();
+		Reporter.log("verifying Shipping method", true);
+
+		address.clickShippingMethodContinue();
+		Reporter.log("clicking on continue button", true);
+		Assert.assertTrue(address.clickShippingMethodContinue(), "clicked on continue in shopping method");
+
+		Thread.sleep(3000);
+
+		address.isPaymentMethodDisplayed();
+		Reporter.log("Verifying Payment method Page", true);
+		/*
+		 * address.isContinueButtonDisplayedInPaymentMethod();
+		 * address.isBackButtonDisplayedInPaymentMethod();
+		 */
+		address.ClickOnPurchaseOrder();
+		Reporter.log("Clicking on Purchase order number", true);
+
+		address.ClickOnContinueInPaymentMethod();
+		Reporter.log("clicking on continue butoon in payement method", true);
+
+		Thread.sleep(3000);
+		address.enterPoNumber("123456");
+		Reporter.log("Entered PoNumber", true);
+
+		address.clilckOnContinueInPoNumber();
+		Reporter.log("clicked on continue in PoNumber", true);
+
+		address.isConfirmOrderDisplayed();
+		Reporter.log("verifying confirm order page", true);
+
+		Reporter.log("cicking on confirm button", true);
+		Assert.assertTrue(address.isConfirmButtonDisplayedInConfirmOrder(), "clciking on confirm button");
+
+		Reporter.log("verifying back button is displaying", true);
+		// Assert.assertTrue(address.isBackButtonDisplayedInConfirmOrder(), "verifying
+		// back button is displayed");
+
+		address.ClickOnConfirmInConfirmOrder();
+		Reporter.log("clicking on confirm button", true);
+		//Assert.assertTrue(address.ClickOnConfirmInConfirmOrder(), "clcicked on continue button in payment information");
+        
+		address.isThankYouPageDisplayed();
+		Reporter.log("verifying thank you page is displayed", true);
+		
+		address.isOrderNumberDisplayedInThankYouPage();
+		Reporter.log("verifying order number is displayed", true);
+		
+		Reporter.log("verifying continue button is displayed in thank u page", true);
+		
+		address.ClickOnContinueInThankYouPage();
+		Reporter.log("clicking on continue button in thank u page", true);
+		
+		Reporter.log("verifying home page is displayed", true);
+		Assert.assertTrue(address.isHomePageDisplayed(), "verifying home page is displayed");
+		
 	}
 
 }
