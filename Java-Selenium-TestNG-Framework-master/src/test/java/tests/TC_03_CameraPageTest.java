@@ -34,7 +34,7 @@ public class TC_03_CameraPageTest extends BasePage {
 		// Clicking on Login button
 		loginPage.Loginbutton();
 		Reporter.log("Clicking on Login button", true);
-        Assert.assertTrue(loginPage.verifyHomePAge(), "Not displlaying user EmailId");
+        Assert.assertTrue(loginPage.verifyHomePage(), "Not displlaying user EmailId");
 		
         HomePage homePage = new HomePage(driver);
 		// getting Title of the Home Page.

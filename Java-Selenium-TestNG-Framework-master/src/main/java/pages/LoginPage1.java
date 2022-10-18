@@ -29,7 +29,7 @@ public class LoginPage1 {
 	public boolean verifyclickOnLogin() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(login)).isDisplayed();
 	}
-	public boolean verifyHomePAge() {
+	public boolean verifyHomePage() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(verifyUserEmailIdisDIsplaying)).isDisplayed();
 	}
 
