@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.CheckoutPage;
 import pages.GiftcardPage;
+import pages.HomePage;
 import pages.LoginPage1;
 import pages.VirtualGiftcard_ProductPage;
 
@@ -14,14 +15,23 @@ public class TC07_GiftcardPageTest extends BasePage {
 	@Test(priority = 0)
 	public void Giftcards() throws InterruptedException {
 		LoginPage1 page = new LoginPage1(driver);
+		Reporter.log("Demowebshop Application is Lauched",true);
+		Assert.assertTrue(page.verifyclickOnLogin(),"Demowebshop Application is not lauched");
 		page.clickOnLogin();
+		Reporter.log("Clicking on login link",true);
+		Assert.assertTrue(page.verifyclickOnLogin(),"Not clicking on Login Link");
 		page.typeEmail("achyutkembhavi4@gmail.com");
+		Reporter.log("Entering the data into the Emailtextfeild",true);
 		page.typePassword("131099");
+		Reporter.log("Entering the data into the PasswordTextfeild",true);
 		page.Loginbutton();
+		Reporter.log("Clicking on login Button",true);
 
+		
 		// Clicking on Gift cards Menu
 		GiftcardPage giftpage = new GiftcardPage(driver);
-		giftpage.clickGiftcards(); // Clicking on Giftcards_Menu
+		HomePage homepage=new HomePage(driver) ;// Clicking on Giftcards_Menu
+		homepage.clickGiftCards();
 		Reporter.log("Clicking on Giftcards Menu", true);
 		Assert.assertTrue(giftpage.Giftcards_Text(), "Not clicking on Giftcards Menu");
 		Reporter.log("Verifying the Postion option present in Sortby Dropdown", true);// Asserting postion option
@@ -31,6 +41,7 @@ public class TC07_GiftcardPageTest extends BasePage {
 		Reporter.log("Verifying the Grid option present in Viewas Dropdown", true);
 		Assert.assertTrue(giftpage.DefaultGrid_option(), "Grid option is not present in Viewas Dropdown");
 
+		
 		// Clicking on $25 virtual Gift card Product
 		giftpage.ClickVitualGiftcardProduct();
 		Reporter.log("Clicking on $25 vitual Giftcard", true);
@@ -50,12 +61,12 @@ public class TC07_GiftcardPageTest extends BasePage {
 		Reporter.log("Clicking on Addtocart button");
 		Assert.assertTrue(productpage.Message_addedtocart(), "Not clicking on Addtocart");
 
+	
 		// After Adding the product to cart and then Clicking on Shopping Cart
 		productpage.ShoppingCart();
 		Reporter.log("Clicking on Shopping cart", true);
 		Assert.assertTrue(productpage.virtualgiftcard_inShoppingcart(), "not clicking on shopping cart");
-		productpage.Twentyfive_Price();// Verifying Price as 25.00
-		Reporter.log("Verifying the 25.00 price is displayed", true);
+		productpage.Twentyfive_Price();// Verifying Price as 25.00		Reporter.log("Verifying the 25.00 price is displayed", true);
 		Assert.assertTrue(productpage.Twentyfive_Price(), "25.00 price is not displayed");
 		productpage.Iagree_Checkbox();// Verifying I agree checkbox is displayed
 		Reporter.log("Verifying the I agree checkbox is displayed", true);
@@ -66,6 +77,7 @@ public class TC07_GiftcardPageTest extends BasePage {
 		Reporter.log("Verifying the Checkout Button is displayed", true);
 		Assert.assertTrue(productpage.Checkout_Button(), "Checkout Button is not displayed");
 
+		
 		// clicking on Checkout Button
 		productpage.ClickCheckout_Button();
 		Reporter.log("Clicking on Checkout Button", true);
@@ -76,6 +88,7 @@ public class TC07_GiftcardPageTest extends BasePage {
 		Assert.assertTrue(checkpage.isContinueButtonDisplayed(), "Continue Button is not Displayed");
 		Thread.sleep(5000);
 
+		
 		// Clicking on Continue in Billing Address
 		checkpage.ClickOnContinueInBillingAddress();
 		Reporter.log("Clicking on Continue Button", true);
@@ -96,6 +109,7 @@ public class TC07_GiftcardPageTest extends BasePage {
 		Reporter.log("Verifying the Cash on delivery text is Displayed",true);
 		Assert.assertTrue(checkpage.CodTextIsDisplayed(), "cash on Delivery text message is not displayed");
 
+		
 		// Clicking on Continue Button in Payment Information
 		checkpage.ClickOnContinueInPaymentInformation();
 		Reporter.log("Clicking on Continue Button in Payment Information",true);
@@ -104,6 +118,7 @@ public class TC07_GiftcardPageTest extends BasePage {
 		Reporter.log("verifying the Payment method is Displayed",true);
 		Assert.assertTrue(checkpage.Paymentmethodtext_isDisplayed(), "Payment method is not Displayed");
 
+		
 		// Clicking on Confirm Button in Confirm Order
 		checkpage.ClickOnConfirmInConfirmOrder();
 		Reporter.log("Clicking on Confirm button",true);
@@ -113,6 +128,9 @@ public class TC07_GiftcardPageTest extends BasePage {
 		Assert.assertTrue(checkpage.isOrderNumberDisplayedInThankYouPage(),"Order number is Displayed");
 		checkpage.ClickOnContinueInThankYouPage();
 		Reporter.log("Clicking on the Continue button in thank you page",true);
+		Reporter.log("After Clicking Continue button in Thank you page Verifying Home page is not Displayed");
+		Assert.assertTrue(checkpage.isHomePageDisplayed(),"Home page is not Displayed");
+		
 		
 		
 		
