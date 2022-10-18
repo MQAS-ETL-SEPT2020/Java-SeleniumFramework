@@ -14,17 +14,28 @@ public class TC_02_ComputersTest extends BasePage {
 	@Test
 	public void computer() throws InterruptedException {
 
-		// WHEN I click on "login" link
 		LoginPage1 login = new LoginPage1(driver);
 		login.clickOnLogin();
+		Reporter.log("Clicking on Login Link", true);
+		Assert.assertTrue(login.verifyLoginPage(), "not going to Login page");
+		Reporter.log("Login Page is displayed", true);
 
-		// WHEN I login with "Email" and "Password" AND click  on "Log in" button
 		login.typeEmail("lalipreeti9@gmail.com");
+		Reporter.log("Entering valid emailId in Email textfield", true);
+
 		login.typePassword("PreetiLali@123");
+		Reporter.log("Entering valid password in password textfield", true);
+
 		login.clickRemembermeCheckbox();
+		Reporter.log("Clicking on remember me check box", true);
+
 		login.Loginbutton();
+		Reporter.log("Clicking on Login button", true);
+        Assert.assertTrue(login.verifyHomePage(), "Not displlaying user EmailId");
 
 		HomePage home = new HomePage(driver);
+		home.getTitle();
+		Reporter.log("verifying title of the page", true);
 
 		home.clickComputers();
 		ComputersPage computer = new ComputersPage(driver);
