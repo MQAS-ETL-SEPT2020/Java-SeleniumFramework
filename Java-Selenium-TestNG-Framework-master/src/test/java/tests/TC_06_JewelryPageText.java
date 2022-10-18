@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import pages.BasePage;
 import pages.CheckoutPage;
+import pages.HomePage;
 import pages.JewelShoppingPage;
 import pages.JewelleryPage;
 import pages.LoginPage1;
@@ -17,10 +18,28 @@ public class TC_06_JewelryPageText extends BasePage {
 
 		LoginPage1 login = new LoginPage1(driver);
 		login.clickOnLogin();
-		login.typeEmail("vanigowdas54@gmail.com");
-		login.typePassword("Vani@7411");
-		login.Loginbutton();
+		Reporter.log("Clicking on Login Link", true);
+		Assert.assertTrue(login.verifyLoginPage(), "not going to Login page");
+		Reporter.log("Login Page is displayed", true);
 
+		login.typeEmail("vanigowdas54@gmail.com");
+		Reporter.log("Entering valid emailId in Email textfield", true);
+
+		login.typePassword("Vani@7411");
+		Reporter.log("Entering valid password in password textfield", true);
+
+		login.Loginbutton();
+		Reporter.log("Clicking on Login button", true);
+        Assert.assertTrue(login.verifyHomePage(), "Not displlaying user EmailId");
+		
+        HomePage home = new HomePage(driver);
+		home.getTitle();
+		Reporter.log("verifying title of the page", true);
+		
+		home.clickJewelry();
+		Reporter.log("Books page is displayed",true);
+
+        
 		JewelleryPage jewel = new JewelleryPage(driver);
 		jewel.clickOnjewel();
 		Reporter.log("clicking on jewelry", true);

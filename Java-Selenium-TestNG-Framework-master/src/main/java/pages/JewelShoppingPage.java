@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class JewelShoppingPage {
-	By shoppingCart = By.xpath("//span[text()='Shopping cart']");
+	By shoppingCart = By.xpath("(//a[@class=\"ico-cart\"])[1]");
 	By shoppingcartPageText=By.xpath("//h1[text()='Shopping cart']");
 	By Country=By.id("CountryId");
 	By Pincode=By.id("ZipPostalCode");
