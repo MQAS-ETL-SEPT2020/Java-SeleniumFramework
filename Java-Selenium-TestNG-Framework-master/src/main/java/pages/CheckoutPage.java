@@ -53,7 +53,11 @@ public class CheckoutPage {
 	By CheckMoneyOrder = By.xpath("//label[text()='Check / Money Order (5.00)']");
 	By CreditCard = By.xpath("//label[text()='Credit Card']");
 	By PurchaseOrder = By.xpath("//label[text()='Purchase Order']");
+	By PoNumber=By.xpath("//input[@name='PurchaseOrderNumber']");
+	By ContinueButtonInPonumber=By.xpath("(//input[@value='Continue'])[5]");
 	By BackButtonInPaymentMethod = By.xpath("(//a[text()='Back'])[1]");
+	By BackButtonInPoNumber=By.xpath("(//a[text()='Back'])[4]");
+
 	By ContinueInPaymentMethod = By.xpath("//input[@class='button-1 payment-method-next-step-button']");
 
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -295,6 +299,20 @@ public class CheckoutPage {
 	public void ClickOnContinueInPaymentMethod() {
 		driver.findElement(ContinueInPaymentMethod).click();
 	}
+	public void enterPoNumber(String Ponumber) {
+		driver.findElement(PoNumber).clear();
+		driver.findElement(PoNumber).sendKeys(Ponumber);
+	}
+
+	public void clilckOnContinueInPoNumber() {
+		//return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueButtonInPonumber)).isDisplayed();
+		driver.findElement(ContinueButtonInPonumber).click();;
+	}
+
+	public boolean isBackButtonDisplayedInPoNumber() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonInPoNumber)).isDisplayed();
+	}
+	
 	
 	//>>>>>>Assertion Methods<<<<<<<<<<<<<<<<	    
 	    
