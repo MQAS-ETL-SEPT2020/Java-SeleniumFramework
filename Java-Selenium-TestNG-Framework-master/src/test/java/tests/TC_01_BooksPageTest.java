@@ -7,6 +7,7 @@ import pages.BasePage;
 import pages.BooksPage;
 import pages.CheckoutPage;
 import pages.HomePage;
+import pages.LoginPage;
 import pages.LoginPage1;
 
 public class TC_01_BooksPageTest extends BasePage {
@@ -17,7 +18,8 @@ public class TC_01_BooksPageTest extends BasePage {
 		LoginPage1 login = new LoginPage1(driver);
 		login.clickOnLogin();
 		Reporter.log("Clicking on Login Link", true);
-		// Assert.assertTrue(login.clickOnLogin(), "Not clicking on login link");
+		Assert.assertTrue(login.verifyLoginPage(), "not going to Login page");
+		Reporter.log("Login Page is displayed", true);
 
 		login.typeEmail("tejaswinirty@gmail.com");
 		Reporter.log("Entering valid emailId in Email textfield", true);
@@ -27,9 +29,14 @@ public class TC_01_BooksPageTest extends BasePage {
 
 		login.Loginbutton();
 		Reporter.log("Clicking on Login button", true);
-
+        Assert.assertTrue(login.verifyHomePAge(), "Not displlaying user EmailId");
+		
 		HomePage home = new HomePage(driver);
+		home.getTitle();
+		Reporter.log("verifying title of the page", true);
+		
 		home.clickBooks();
+		Reporter.log("Books page is displayed",true);
 
 		BooksPage books = new BooksPage(driver);
 		books.ClickBooks();
