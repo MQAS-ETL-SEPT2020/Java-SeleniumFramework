@@ -29,7 +29,7 @@ public class TC_01_BooksPageTest extends BasePage {
 
 		login.Loginbutton();
 		Reporter.log("Clicking on Login button", true);
-        Assert.assertTrue(login.verifyHomePAge(), "Not displlaying user EmailId");
+        Assert.assertTrue(login.verifyHomePage(), "Not displlaying user EmailId");
 		
 		HomePage home = new HomePage(driver);
 		home.getTitle();
