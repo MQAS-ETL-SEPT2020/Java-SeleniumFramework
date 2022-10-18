@@ -20,9 +20,7 @@ public class TC_03_CameraPageTest extends BasePage {
 		LoginPage1 loginPage = new LoginPage1(driver);
 		loginPage.clickOnLogin();
 		Reporter.log("Clicking on login link", true);
-
-		// verifying Login page.
-		loginPage.verifyLoginPage();
+		Assert.assertTrue(loginPage.verifyLoginPage(), "not going to Login page");
 		Reporter.log("Login Page is displayed", true);
 
 		// Entering emailId
@@ -36,14 +34,16 @@ public class TC_03_CameraPageTest extends BasePage {
 		// Clicking on Login button
 		loginPage.Loginbutton();
 		Reporter.log("Clicking on Login button", true);
-
-		HomePage homePage = new HomePage(driver);
+        Assert.assertTrue(loginPage.verifyHomePAge(), "Not displlaying user EmailId");
+		
+        HomePage homePage = new HomePage(driver);
 		// getting Title of the Home Page.
 		homePage.getTitle();
-		Reporter.log("getting title of the page", true);
+		Reporter.log("verifying title of the page", true);
 
 		// clicking on Electronics Menu.
 		homePage.clickElectronics();
+		Reporter.log("Clicking on Electronics Menu", true);
 
 		ElectronicsPage electronics = new ElectronicsPage(driver);
 		// clicking on CellPhones link.
@@ -93,7 +93,7 @@ public class TC_03_CameraPageTest extends BasePage {
 		CheckoutPage address = new CheckoutPage(driver);
 
 		// <<-----Billing address----->>
-
+        Thread.sleep(3000);
 		address.BillingDropdown();
 		Reporter.log("clicking on billing adrress dropdown", true);
 
