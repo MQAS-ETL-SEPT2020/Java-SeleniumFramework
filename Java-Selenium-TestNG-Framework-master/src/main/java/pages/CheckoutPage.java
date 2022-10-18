@@ -53,20 +53,20 @@ public class CheckoutPage {
 	By CheckMoneyOrder = By.xpath("//label[text()='Check / Money Order (5.00)']");
 	By CreditCard = By.xpath("//label[text()='Credit Card']");
 	By PurchaseOrder = By.xpath("//label[text()='Purchase Order']");
-	By PoNumber=By.xpath("//input[@name='PurchaseOrderNumber']");
-	By ContinueButtonInPonumber=By.xpath("(//input[@value='Continue'])[5]");
 	By BackButtonInPaymentMethod = By.xpath("(//a[text()='Back'])[1]");
-	By BackButtonInPoNumber=By.xpath("(//a[text()='Back'])[4]");
 	By ContinueInPaymentMethod = By.xpath("//input[@class='button-1 payment-method-next-step-button']");
 
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+    
+    By Cod_Text=By.xpath("//p[text()='You will pay by COD']");
 	By PaymentInformationField = By.xpath("//h2[text()='Payment information']");
 	By BackButtonInPaymentInformation = By.xpath("(//a[text()='Back'])[2]");
 	By ContinueInPaymentInformation = By.xpath("//input[@class='button-1 payment-info-next-step-button']");
 
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Confirm Order>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+	
+    By Paymentmethod_text=By.xpath("//strong[text()='Payment Method']");
+    By BillingAddress_Text=By.xpath("//strong[text()='Billing Address']");
 	By ConfirmOrderField = By.xpath("//h2[text()='Confirm order']");
 	By BackButtonInConfirmationOrder = By.xpath("(//a[text()='Back'])[3]");
 	By ConfirmInConfirmationOrder = By.xpath("//input[@class='button-1 confirm-order-next-step-button']");
@@ -249,6 +249,24 @@ public class CheckoutPage {
 	public boolean isPaymentMethodDisplayed() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(PaymentMethodField)).isDisplayed();
 	}
+	
+	 public boolean CashonDeliveryisDisplayed() {
+	    	return wait.until(ExpectedConditions.visibilityOfElementLocated(CashOnDelivery)).isDisplayed();
+	    }
+	 
+	 public boolean CheckMoneyOrder_RadioButtonisDisplayed() {
+	    	return wait.until(ExpectedConditions.visibilityOfElementLocated(CheckMoneyOrder)).isDisplayed();
+	    }
+	    
+	    public boolean Creditcard_RadioButtonisDisplayed() {
+	    	return wait.until(ExpectedConditions.visibilityOfElementLocated(CreditCard)).isDisplayed();
+	    }
+	    
+	    public boolean PurchaseOrder_RadioButtonisDisplayed() {
+	    	return wait.until(ExpectedConditions.visibilityOfElementLocated(PurchaseOrder)).isDisplayed();
+	    }
+	    
+	    
 
 	public boolean isContinueButtonDisplayedInPaymentMethod() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueInPaymentMethod)).isDisplayed();
@@ -271,28 +289,20 @@ public class CheckoutPage {
 	}
 
 	public void ClickOnPurchaseOrder() {
-	//return wait.until(ExpectedConditions.visibilityOfElementLocated(PurchaseOrder)).isDisplayed();	
-			driver.findElement(PurchaseOrder).click();
+		driver.findElement(PurchaseOrder).click();
 	}
 
 	public void ClickOnContinueInPaymentMethod() {
 		driver.findElement(ContinueInPaymentMethod).click();
 	}
 	
-	public void enterPoNumber(String Ponumber) {
-		driver.findElement(PoNumber).clear();
-		driver.findElement(PoNumber).sendKeys(Ponumber);
-	}
-	
-	public void clilckOnContinueInPoNumber() {
-		//return wait.until(ExpectedConditions.visibilityOfElementLocated(ContinueButtonInPonumber)).isDisplayed();
-		driver.findElement(ContinueButtonInPonumber).click();;
-	}
-	
-	public boolean isBackButtonDisplayedInPoNumber() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(BackButtonInPoNumber)).isDisplayed();
-	}
+	//>>>>>>Assertion Methods<<<<<<<<<<<<<<<<	    
+	    
+	    public boolean CodTextIsDisplayed() {
+	    	return wait.until(ExpectedConditions.visibilityOfElementLocated(Cod_Text)).isDisplayed();
+	    }
 
+	
 	// <<<<<<<<<<<<<<<<<<<<<<<<Payment Information Field>>>>>>>>>>>>>>>>>>>>>>>>
 
 	public boolean isPaymentInformationDisplayed() {
@@ -328,6 +338,15 @@ public class CheckoutPage {
 	public void ClickOnConfirmInConfirmOrder() {
 		driver.findElement(ConfirmInConfirmationOrder).click();
 	}
+	
+	 public boolean BillingAddress_isDisplayed() {
+	    	return wait.until(ExpectedConditions.visibilityOfElementLocated(BillingAddress_Text)).isDisplayed();
+	    }
+	    
+	    public boolean Paymentmethodtext_isDisplayed() {
+	    	return wait.until(ExpectedConditions.visibilityOfElementLocated(Paymentmethod_text)).isDisplayed();
+	    }
+
 
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<Thank You Page>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

@@ -78,40 +78,44 @@ public class TC07_GiftcardPageTest extends BasePage {
 
 		// Clicking on Continue in Billing Address
 		checkpage.ClickOnContinueInBillingAddress();
-		VirtualGiftcard_ProductPage productpage1 = new VirtualGiftcard_ProductPage(driver);
 		Reporter.log("Clicking on Continue Button", true);
-		Reporter.log("Verifying Cash on Delivery RadioButton is displayed");
-		Assert.assertTrue(productpage1.CashonDeliveryisDisplayed(), "Cash on Delivery RadioButton is not displayed");
-		Reporter.log("Verifying the Check/Money Order RadioButton is Displayed ");
-		Assert.assertTrue(productpage1.CheckMoneyOrder_RadioButtonisDisplayed(),"Check/Money Order RadioButton is Displayed");
-		Reporter.log("Verifying the Credit card  RadioButton is Displayed ");
-		Assert.assertTrue(productpage1.Creditcard_RadioButtonisDisplayed(),"Credit card  RadioButton is not Displayed");
-		Reporter.log("Verifying the Purchase Order  RadioButton is Displayed ");
-		Assert.assertTrue(productpage1.PurchaseOrder_RadioButtonisDisplayed(),"Purchase Order  RadioButton is not Displayed");
-		Reporter.log("Verifying the Backbutton is Displayed");
-		Assert.assertTrue(productpage1.Back_ButtonisDisplayed(), "Backbutton is not Displayed");
+		Reporter.log("Verifying Cash on Delivery RadioButton is displayed",true);
+		Assert.assertTrue(checkpage.CashonDeliveryisDisplayed(), "Cash on Delivery RadioButton is not displayed");
+		Reporter.log("Verifying the Check/Money Order RadioButton is Displayed ",true);
+		Assert.assertTrue(checkpage.CheckMoneyOrder_RadioButtonisDisplayed(),"Check/Money Order RadioButton is Displayed");
+		Reporter.log("Verifying the Credit card  RadioButton is Displayed ",true);
+		Assert.assertTrue(checkpage.Creditcard_RadioButtonisDisplayed(),"Credit card  RadioButton is not Displayed");
+		Reporter.log("Verifying the Purchase Order  RadioButton is Displayed ",true);
+		Assert.assertTrue(checkpage.PurchaseOrder_RadioButtonisDisplayed(),"Purchase Order  RadioButton is not Displayed");
+		Reporter.log("Verifying the Backbutton is Displayed",true);
+		Assert.assertTrue(checkpage.isBackButtonDisplayedInPaymentMethod(), "Backbutton is not Displayed");
 
 		// clicking on Continue Button in Payment method
-		productpage1.Click_ContinueButton();
-		Reporter.log("Clicking on Continue button in payment method ");
-		Reporter.log("Verifying the Cash on delivery text is Displayed");
-		Assert.assertTrue(productpage1.CodTextIsDisplayed(), "cash on Delivery text message is not displayed");
+		checkpage.ClickOnContinueInPaymentMethod();
+		Reporter.log("Clicking on Continue button in payment method ",true);
+		Reporter.log("Verifying the Cash on delivery text is Displayed",true);
+		Assert.assertTrue(checkpage.CodTextIsDisplayed(), "cash on Delivery text message is not displayed");
 
 		// Clicking on Continue Button in Payment Information
-		productpage.ClickContinueButton2();
-		Reporter.log("Clicking on Continue Button in Confirm order");
-		Reporter.log("Verifying the Billing Address is Displayed ");
-		Assert.assertTrue(productpage.BillingAddress_isDisplayed(), "Billing Address is not Displayed");
-		Reporter.log("verifying the Payment method is Displayed");
-		Assert.assertTrue(productpage.Paymentmethodtext_isDisplayed(), "Payment method is not Displayed");
+		checkpage.ClickOnContinueInPaymentInformation();
+		Reporter.log("Clicking on Continue Button in Payment Information",true);
+		Reporter.log("Verifying the Billing Address is Displayed ",true);
+		Assert.assertTrue(checkpage.BillingAddress_isDisplayed(), "Billing Address is not Displayed");
+		Reporter.log("verifying the Payment method is Displayed",true);
+		Assert.assertTrue(checkpage.Paymentmethodtext_isDisplayed(), "Payment method is not Displayed");
 
 		// Clicking on Confirm Button in Confirm Order
-		productpage.ClickConfirm_Button();
-		Reporter.log("Clicking on Confirm button");
-		Reporter.log("Your order has been successfully placed message should be displayed");
-		Assert.assertTrue(productpage.ConfirmationOrder_TextisDisplayed(),"Your order has been successfully placed message is not displayed");
-		Reporter.log("Verifying Particular Order number is displayed");
-		Assert.assertTrue(productpage.OrderNumber_TextisDisplayed(), "Order number is not displayed");
+		checkpage.ClickOnConfirmInConfirmOrder();
+		Reporter.log("Clicking on Confirm button",true);
+		Reporter.log("Verifying the Thank you message is displayed",true);
+		Assert.assertTrue(checkpage.isThankYouPageDisplayed(),"Thank you text is not displayed");
+		Reporter.log("Verifying the Particular order number is displayed ",true);
+		Assert.assertTrue(checkpage.isOrderNumberDisplayedInThankYouPage(),"Order number is Displayed");
+		checkpage.ClickOnContinueInThankYouPage();
+		Reporter.log("Clicking on the Continue button in thank you page",true);
+		
+		
+		
 
 	}
 }
