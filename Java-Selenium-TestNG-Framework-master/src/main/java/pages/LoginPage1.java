@@ -14,8 +14,8 @@ public class LoginPage1 {
 	By LoginButton = By.xpath("//input[@class='button-1 login-button']");
 	By RegisterButton = By.xpath("//input[@class='button-1 register-button']");
 	By verifyLoginpage = By.xpath("//h1[text()='Welcome, Please Sign In!']");
-    By verifyUserEmailIdisDIsplaying=By.xpath("(//a[@class='account'])[1]");
-    
+	By verifyUserEmailIdisDIsplaying = By.xpath("(//a[@class='account'])[1]");
+
 	WebDriver driver;
 	WebDriverWait wait;
 
@@ -23,12 +23,15 @@ public class LoginPage1 {
 		this.driver = driver;
 		wait = new WebDriverWait(driver, 10);
 	}
+
 	public void clickOnLogin() {
 		driver.findElement(login).click();
 	}
+
 	public boolean verifyclickOnLogin() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(login)).isDisplayed();
 	}
+
 	public boolean verifyHomePage() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(verifyUserEmailIdisDIsplaying)).isDisplayed();
 	}
@@ -52,7 +55,8 @@ public class LoginPage1 {
 	}
 
 	public void Loginbutton() {
-		//return wait.until(ExpectedConditions.visibilityOfElementLocated(LoginButton)).isDisplayed();
+		// return
+		// wait.until(ExpectedConditions.visibilityOfElementLocated(LoginButton)).isDisplayed();
 		driver.findElement(LoginButton).click();
 	}
 

@@ -1,7 +1,5 @@
 package tests;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -34,9 +32,9 @@ public class TC_03_CameraPageTest extends BasePage {
 		// Clicking on Login button
 		loginPage.Loginbutton();
 		Reporter.log("Clicking on Login button", true);
-        Assert.assertTrue(loginPage.verifyHomePage(), "Not displlaying user EmailId");
-		
-        HomePage homePage = new HomePage(driver);
+		Assert.assertTrue(loginPage.verifyHomePage(), "Not displlaying user EmailId");
+
+		HomePage homePage = new HomePage(driver);
 		// getting Title of the Home Page.
 		homePage.getTitle();
 		Reporter.log("verifying title of the page", true);
@@ -93,7 +91,7 @@ public class TC_03_CameraPageTest extends BasePage {
 		CheckoutPage address = new CheckoutPage(driver);
 
 		// <<-----Billing address----->>
-        Thread.sleep(3000);
+		Thread.sleep(3000);
 		address.BillingDropdown();
 		Reporter.log("clicking on billing adrress dropdown", true);
 
@@ -210,21 +208,23 @@ public class TC_03_CameraPageTest extends BasePage {
 
 		address.ClickOnConfirmInConfirmOrder();
 		Reporter.log("clicking on confirm button", true);
-		//Assert.assertTrue(address.ClickOnConfirmInConfirmOrder(), "clcicked on continue button in payment information");
-        
+		// Assert.assertTrue(address.ClickOnConfirmInConfirmOrder(), "clicked on
+		// continue button in payment information");
+
 		address.isThankYouPageDisplayed();
 		Reporter.log("verifying thank you page is displayed", true);
-		
+
 		address.isOrderNumberDisplayedInThankYouPage();
 		Reporter.log("verifying order number is displayed", true);
-		
+
 		Reporter.log("verifying continue button is displayed in thank u page", true);
-		
+
 		address.ClickOnContinueInThankYouPage();
 		Reporter.log("clicking on continue button in thank u page", true);
-		
+
 		Reporter.log("verifying home page is displayed", true);
 		Assert.assertTrue(address.isHomePageDisplayed(), "verifying home page is displayed");
+        
 		
 	}
 
